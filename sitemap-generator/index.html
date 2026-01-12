@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイトマップ生成ツール | URLから自動生成</title>
+  <meta name="description" content="URLを入力するだけで、Webサイトのサイトマップを自動生成。XML形式でダウンロード可能。SEO対策に最適。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">🗺️</span>
+        <span class="logo-text">SitemapGenerator</span>
+      </div>
+      <p class="tagline">サイトマップ自動生成ツール</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- URL入力セクション -->
+      <section class="input-section">
+        <h1 class="section-title">
+          <span class="title-icon">🔍</span>
+          URLを入力してサイトマップ生成
+        </h1>
+        <form id="generateForm" class="generate-form">
+          <div class="input-wrapper">
+            <input 
+              type="url" 
+              id="urlInput" 
+              class="url-input" 
+              placeholder="https://example.com" 
+              required
+              autocomplete="url"
+            >
+            <button type="submit" id="generateBtn" class="generate-btn">
+              <span class="btn-text">生成開始</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <div class="options-wrapper">
+            <div class="option-group">
+              <label for="maxDepth" class="option-label">最大深度</label>
+              <select id="maxDepth" class="option-select">
+                <option value="1">1階層</option>
+                <option value="2" selected>2階層</option>
+                <option value="3">3階層</option>
+                <option value="4">4階層</option>
+                <option value="5">5階層</option>
+              </select>
+            </div>
+            <div class="option-group">
+              <label for="maxPages" class="option-label">最大ページ数</label>
+              <input 
+                type="number" 
+                id="maxPages" 
+                class="option-input" 
+                min="10" 
+                max="1000" 
+                value="100"
+              >
+            </div>
+            <div class="option-group">
+              <label class="option-checkbox">
+                <input type="checkbox" id="includeImages" checked>
+                <span>画像を含める</span>
+              </label>
+            </div>
+          </div>
+          <p class="input-hint">サイトマップを生成したいWebサイトのURLを入力してください</p>
+          <p class="input-hint" style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">💡 処理には数分かかる場合があります。進捗状況を確認しながらお待ちください。</p>
+        </form>
+      </section>
+
+      <!-- ローディング表示 -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">サイトマップを生成中...</p>
+        <div class="loading-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">0 / 0 ページ</p>
+          <p class="progress-url" id="progressUrl"></p>
+        </div>
+        <button id="cancelBtn" class="cancel-btn hidden">キャンセル</button>
+      </div>
+
+      <!-- エラー表示 -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">エラーが発生しました</h3>
+        <p id="errorMessage" class="error-message"></p>
+        <button id="retryBtn" class="retry-btn">再試行</button>
+      </div>
+
+      <!-- 結果セクション -->
+      <div id="resultsSection" class="results-section hidden">
+        <!-- サマリーカード -->
+        <section class="summary-section">
+          <h2 class="section-title">
+            <span class="title-icon">📊</span>
+            生成サマリー
+          </h2>
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="card-icon">📄</div>
+              <div class="card-content">
+                <span class="card-value" id="totalPages">0</span>
+                <span class="card-label">総ページ数</span>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="card-icon">🖼️</div>
+              <div class="card-content">
+                <span class="card-value" id="totalImages">0</span>
+                <span class="card-label">画像数</span>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="card-icon">🔗</div>
+              <div class="card-content">
+                <span class="card-value" id="totalLinks">0</span>
+                <span class="card-label">リンク数</span>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="card-icon">⏱️</div>
+              <div class="card-content">
+                <span class="card-value" id="generationTime">0s</span>
+                <span class="card-label">生成時間</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- アクションボタン -->
+        <section class="actions-section">
+          <div class="action-buttons">
+            <button id="downloadXmlBtn" class="action-btn primary">
+              <span class="btn-icon">📥</span>
+              <span class="btn-text">XML形式でダウンロード</span>
+            </button>
+            <button id="downloadTxtBtn" class="action-btn">
+              <span class="btn-icon">📄</span>
+              <span class="btn-text">テキスト形式でダウンロード</span>
+            </button>
+            <button id="copyXmlBtn" class="action-btn">
+              <span class="btn-icon">📋</span>
+              <span class="btn-text">XMLをコピー</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- サイトマッププレビュー -->
+        <section class="preview-section">
+          <h2 class="section-title">
+            <span class="title-icon">👁️</span>
+            サイトマッププレビュー
+          </h2>
+          <div class="preview-tabs">
+            <button class="tab-btn active" data-tab="tree">
+              <span class="tab-icon">🌳</span>
+              ツリービュー
+            </button>
+            <button class="tab-btn" data-tab="list">
+              <span class="tab-icon">📋</span>
+              リストビュー
+            </button>
+            <button class="tab-btn" data-tab="xml">
+              <span class="tab-icon">📄</span>
+              XML形式
+            </button>
+          </div>
+
+          <!-- ツリービュー -->
+          <div class="preview-panel active" id="treePreview">
+            <div class="tree-container" id="treeContainer">
+              <!-- ツリー構造がここに表示されます -->
+            </div>
+          </div>
+
+          <!-- リストビュー -->
+          <div class="preview-panel" id="listPreview">
+            <div class="list-container" id="listContainer">
+              <!-- リストがここに表示されます -->
+            </div>
+          </div>
+
+          <!-- XML形式 -->
+          <div class="preview-panel" id="xmlPreview">
+            <div class="xml-container">
+              <pre class="xml-code" id="xmlCode"><code></code></pre>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

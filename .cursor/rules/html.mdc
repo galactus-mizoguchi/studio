@@ -1,0 +1,29 @@
+---
+description: HTML coding standards and conventions.
+globs: **/*.html
+---
+# HTML コーディング規約
+
+## 必須ルール
+- セマンティックなHTML5タグを使用（`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`など）
+- **インデントは2スペース**
+- 属性値はダブルクォートを使用
+- 自己完結型タグはスラッシュを付けない（`<br>`, `<img>`, `<input>`など）
+- `id`と`class`は意味のある名前を付ける（ケバブケース）
+- アクセシビリティを考慮（`alt`属性、`aria-label`など）
+- 適切な見出し構造（h1 → h2 → h3）
+
+## 基本構造
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ページタイトル</title>
+</head>
+<body>
+  <!-- コンテンツ -->
+</body>
+</html>
+```

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レスポンシブデザインチェッカー | 複数デバイスでプレビュー</title>
+  <meta name="description" content="URLを入力するだけで、iPhone、iPad、デスクトップなど複数のデバイスサイズでWebサイトの表示を確認できるツール。レスポンシブデザインの確認に最適。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">📱</span>
+        <span class="logo-text">ResponsiveChecker</span>
+      </div>
+      <p class="tagline">レスポンシブデザイン確認ツール</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- URL入力セクション -->
+      <section class="input-section">
+        <h1 class="section-title">
+          <span class="title-icon">🔍</span>
+          URLを入力してプレビュー開始
+        </h1>
+        <form id="previewForm" class="preview-form">
+          <div class="input-wrapper">
+            <input 
+              type="url" 
+              id="urlInput" 
+              class="url-input" 
+              placeholder="https://example.com" 
+              required
+              autocomplete="url"
+            >
+            <button type="submit" id="previewBtn" class="preview-btn">
+              <span class="btn-text">プレビュー</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <p class="input-hint">確認したいWebページのURLを入力してください</p>
+          <p class="input-hint" style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.7;">💡 デバイスタブをCtrl/Cmd+クリックまたは右クリックで比較に追加できます</p>
+        </form>
+      </section>
+
+      <!-- ローディング表示 -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">ページを読み込み中...</p>
+      </div>
+
+      <!-- エラー表示 -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">エラーが発生しました</h3>
+        <p id="errorMessage" class="error-message"></p>
+        <button id="retryBtn" class="retry-btn">再試行</button>
+      </div>
+
+      <!-- プレビュー結果セクション -->
+      <div id="resultsSection" class="results-section hidden">
+        <!-- デバイス選択タブ -->
+        <section class="device-section">
+          <h2 class="section-title">
+            <span class="title-icon">📱</span>
+            デバイスサイズを選択
+          </h2>
+          <div class="device-tabs">
+            <button class="device-tab active" data-device="iphone-se">
+              <span class="device-icon">📱</span>
+              <span class="device-name">iPhone SE</span>
+              <span class="device-size">375×667</span>
+            </button>
+            <button class="device-tab" data-device="iphone-12">
+              <span class="device-icon">📱</span>
+              <span class="device-name">iPhone 12/13</span>
+              <span class="device-size">390×844</span>
+            </button>
+            <button class="device-tab" data-device="iphone-14-pro">
+              <span class="device-icon">📱</span>
+              <span class="device-name">iPhone 14 Pro</span>
+              <span class="device-size">393×852</span>
+            </button>
+            <button class="device-tab" data-device="ipad">
+              <span class="device-icon">📱</span>
+              <span class="device-name">iPad</span>
+              <span class="device-size">768×1024</span>
+            </button>
+            <button class="device-tab" data-device="ipad-pro">
+              <span class="device-icon">📱</span>
+              <span class="device-name">iPad Pro</span>
+              <span class="device-size">1024×1366</span>
+            </button>
+            <button class="device-tab" data-device="desktop">
+              <span class="device-icon">💻</span>
+              <span class="device-name">デスクトップ</span>
+              <span class="device-size">1920×1080</span>
+            </button>
+            <button class="device-tab" data-device="custom">
+              <span class="device-icon">⚙️</span>
+              <span class="device-name">カスタム</span>
+              <span class="device-size">-</span>
+            </button>
+          </div>
+
+          <!-- カスタムサイズ入力 -->
+          <div id="customSizePanel" class="custom-size-panel hidden">
+            <div class="custom-size-inputs">
+              <div class="size-input-group">
+                <label for="customWidth">幅 (px)</label>
+                <input type="number" id="customWidth" class="size-input" min="320" max="3840" value="1200">
+              </div>
+              <div class="size-input-group">
+                <label for="customHeight">高さ (px)</label>
+                <input type="number" id="customHeight" class="size-input" min="480" max="2160" value="800">
+              </div>
+              <button id="applyCustomSize" class="apply-btn">適用</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- プレビューエリア -->
+        <section class="preview-section">
+          <div class="preview-header">
+            <h2 class="section-title">
+              <span class="title-icon">👁️</span>
+              プレビュー
+            </h2>
+            <div class="preview-actions">
+              <button id="screenshotBtn" class="action-btn">
+                <span class="btn-icon">📸</span>
+                <span class="btn-text">スクリーンショット</span>
+              </button>
+              <button id="refreshBtn" class="action-btn">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-text">再読み込み</span>
+              </button>
+            </div>
+          </div>
+          <div class="preview-container">
+            <div class="device-frame" id="deviceFrame">
+              <div class="device-screen">
+                <iframe id="previewFrame" src="" frameborder="0"></iframe>
+              </div>
+            </div>
+            <div class="preview-info">
+              <p class="current-url" id="currentUrl"></p>
+              <p class="current-size" id="currentSize"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 複数デバイス比較 -->
+        <section class="comparison-section">
+          <h2 class="section-title">
+            <span class="title-icon">🔄</span>
+            複数デバイスで比較
+          </h2>
+          <div class="comparison-grid" id="comparisonGrid">
+            <!-- 比較用のプレビューがここに動的に追加されます -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- html2canvas for screenshot -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+

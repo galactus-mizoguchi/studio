@@ -1,0 +1,58 @@
+---
+description: Apply to all files. Defines language, basic style, and tech stack constraints.
+globs: *
+---
+# 基本方針 (General Principles)
+
+## 言語 (Language)
+- **会話**: 日本語 (Japanese)
+- **コード内のコメント**: 日本語 (Japanese)
+- **変数名・関数名**: 英語 (English, descriptive)
+
+## スタイル (Style)
+- 可読性を重視する
+- モダンな構文を使用する (ES6+, CSS Variables etc.)
+
+# テクノロジー (Technology Stack)
+- **HTML**: Semantic HTML5
+- **CSS**: Vanilla CSS (No Framework unless specified)
+- **JS**: Vanilla JavaScript (No jQuery)
+
+---
+
+# 全般的なルール
+
+## 文字コード・改行・インデント
+- **文字コード**: UTF-8（BOMなし）
+- **改行コード**: LF（Unix形式）
+- **インデント**: 
+  - HTML/PHP: スペース2つ
+  - CSS/JavaScript: スペース2つ
+
+## コメント
+- 日本語でのコメントを推奨
+- 複雑な処理には必ずコメントを記述
+- TODOコメントは `// TODO: 説明` の形式
+
+## 命名規則
+- **HTML/CSS**: ケバブケース（`my-class-name`）
+- **JavaScript**: キャメルケース（`myFunctionName`）
+- **PHP**: スネークケース（`my_function_name`）
+- **ファイル名**: 小文字、ハイフン区切り（`my-file-name.html`）
+
+## 各プロジェクト共通のルール
+
+- コピーライトはGALACTUS LLC で、「https://galactus.co.jp」のリンクをつける
+- 下記のタグマネージャーを使う
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P542KLR');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+- faviconは下記を使用する
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />

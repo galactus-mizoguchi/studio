@@ -1,0 +1,31 @@
+---
+description: JavaScript coding standards (ES6+, Async/Await).
+globs: **/*.js
+---
+# JavaScript コーディング規約
+
+## 必須ルール
+- **変数・関数名**: キャメルケース（`myVariableName`）
+- **定数**: 大文字スネークケース（`MY_CONSTANT`）
+- `const`を優先、再代入が必要な場合のみ`let`を使用
+- `var`は使用しない
+- セミコロンは必ず付ける
+- 厳密等価演算子（`===`, `!==`）を使用
+- テンプレートリテラルを活用
+- **インデントは2スペース**
+- アロー関数 `() => {}` を積極的に使用
+- 非同期処理は `async/await` を使用
+
+## DOM操作の例
+```javascript
+// DOM要素の取得
+const menuToggle = document.getElementById('menuToggle');
+const menuItems = document.querySelectorAll('.menu-item');
+
+// イベントリスナー
+menuToggle.addEventListener('click', () => {
+  menuItems.forEach((item) => {
+    item.classList.toggle('active');
+  });
+});
+```

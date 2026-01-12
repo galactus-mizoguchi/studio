@@ -1,0 +1,54 @@
+---
+description: Project directory structure and file organization.
+globs: *
+---
+# ディレクトリ構造 (Directory Structure)
+
+## 小規模プロジェクト
+- 1ファイルにHTML + CSS + JavaScriptをすべて含む
+
+## 中規模プロジェクト（ファイル分離）
+```
+project-name/
+├── index.html
+└── assets/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── script.js
+    └── img/
+        └── logo.png
+```
+
+## 大規模プロジェクト（コンポーネント分離）
+```
+project-name/
+├── index.html
+└── assets/
+    ├── css/
+    │   ├── base.css
+    │   ├── components/
+    │   │   ├── header.css
+    │   │   └── footer.css
+    │   └── utilities.css
+    ├── js/
+    │   ├── main.js
+    │   └── modules/
+    │       ├── menu.js
+    │       └── form.js
+    ├── img/
+    │   └── logo.png
+    └── fonts/
+        └── custom-font.woff2
+```
+
+## ファイル構造のルール
+- **CSS、JavaScript、画像、フォントなどのアセットファイルは必ず`assets`フォルダ内に配置する**
+- `assets`フォルダ内は種類別にサブフォルダで整理（`css/`, `js/`, `img/`, `fonts/`など）
+- HTMLファイルからは`assets/`を基準にパスを指定（例: `assets/css/style.css`）
+
+## SCSSについて
+- ルートサイト（メインの`index.html`）ではSCSSを使用してCSSを生成
+- `assets/scss/` フォルダにSCSSソースファイルを配置
+- コンパイル後のCSSは `assets/css/style.css` に出力
+- 個別プロジェクト（`projects/`配下）では通常のCSSを使用することを推奨

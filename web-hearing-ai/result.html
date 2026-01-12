@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>生成結果 | Web制作ヒアリングAI</title>
+	<meta name="description" content="AIが生成した要件定義書とサイト構成をご確認ください。">
+	<link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/css/studio.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+	<div class="background-effects">
+		<div class="gradient-orb orb-1"></div>
+		<div class="gradient-orb orb-2"></div>
+		<div class="gradient-orb orb-3"></div>
+		<div class="grid-pattern"></div>
+	</div>
+
+	<header class="site-header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html" class="logo-link">
+					<span class="logo-icon">🎯</span>
+					<span class="logo-text">Web制作ヒアリングAI</span>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="container">
+			<section class="result-section">
+				<div class="result-header">
+					<h1 class="section-title">
+						<span class="title-icon">✨</span>
+						要件定義書
+					</h1>
+					<p class="section-description">
+						AIが生成した要件定義書とサイト構成をご確認ください。
+					</p>
+					<div class="result-actions">
+						<button id="copyBtn" class="btn btn-secondary">
+							<span class="btn-icon">📋</span>
+							<span class="btn-text">コピー</span>
+						</button>
+						<button id="downloadBtn" class="btn btn-primary">
+							<span class="btn-icon">📄</span>
+							<span class="btn-text">PDFダウンロード</span>
+						</button>
+					</div>
+				</div>
+
+				<!-- 生成結果コンテンツ -->
+				<div id="resultContent" class="result-content">
+					<!-- サイトコンセプト -->
+					<div class="result-card">
+						<h2 class="card-title">
+							<span class="card-icon">💡</span>
+							サイトコンセプト
+						</h2>
+						<div class="card-content">
+							<p id="siteConcept" class="concept-text">生成中...</p>
+						</div>
+					</div>
+
+					<!-- ターゲット -->
+					<div class="result-card">
+						<h2 class="card-title">
+							<span class="card-icon">🎯</span>
+							ターゲット
+						</h2>
+						<div class="card-content">
+							<p id="target" class="target-text">生成中...</p>
+						</div>
+					</div>
+
+					<!-- ページ構成 -->
+					<div class="result-card">
+						<h2 class="card-title">
+							<span class="card-icon">📑</span>
+							ページ構成
+						</h2>
+						<div class="card-content">
+							<div id="pageStructure" class="page-structure">
+								<p>生成中...</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- トーン -->
+					<div class="result-card">
+						<h2 class="card-title">
+							<span class="card-icon">🎨</span>
+							トーン・雰囲気
+						</h2>
+						<div class="card-content">
+							<p id="copyTone" class="tone-text">生成中...</p>
+						</div>
+					</div>
+
+					<!-- 備考・注意事項 -->
+					<div class="result-card">
+						<h2 class="card-title">
+							<span class="card-icon">📝</span>
+							備考・注意事項
+						</h2>
+						<div class="card-content">
+							<p id="notes" class="notes-text">生成中...</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- エラー表示 -->
+				<div id="errorState" class="error-state hidden">
+					<div class="error-icon">⚠️</div>
+					<h3 class="error-title">エラーが発生しました</h3>
+					<p id="errorMessage" class="error-message"></p>
+					<a href="hearing.html" class="btn btn-primary">もう一度試す</a>
+				</div>
+
+				<!-- アクション -->
+				<div class="result-footer">
+					<a href="hearing.html" class="btn btn-secondary">
+						<span class="btn-icon">←</span>
+						<span class="btn-text">新しいヒアリング</span>
+					</a>
+					<a href="index.html" class="btn btn-secondary">
+						<span class="btn-text">トップに戻る</span>
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container">
+			<p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<script src="assets/js/script.js"></script>
+</body>
+</html>
+

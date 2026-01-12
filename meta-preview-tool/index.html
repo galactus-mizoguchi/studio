@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メタタグプレビューツール | SEO & SNS最適化チェッカー</title>
+  <meta name="description" content="URLを入力するだけで、Google検索結果、Facebook、Twitter(X)での表示をプレビュー。SEOとSNS最適化に必要なメタタグを一括チェック。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">MetaScope</span>
+      </div>
+      <p class="tagline">メタタグ分析 & プレビューツール</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- URL入力セクション -->
+      <section class="input-section">
+        <h1 class="section-title">
+          <span class="title-icon">🔍</span>
+          URLを入力して分析開始
+        </h1>
+        <form id="analyzeForm" class="analyze-form">
+          <div class="input-wrapper">
+            <input 
+              type="url" 
+              id="urlInput" 
+              class="url-input" 
+              placeholder="https://example.com" 
+              required
+              autocomplete="url"
+            >
+            <button type="submit" id="analyzeBtn" class="analyze-btn">
+              <span class="btn-text">分析</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <p class="input-hint">分析したいWebページのURLを入力してください</p>
+        </form>
+      </section>
+
+      <!-- ローディング表示 -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">メタタグを分析中...</p>
+      </div>
+
+      <!-- エラー表示 -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">エラーが発生しました</h3>
+        <p id="errorMessage" class="error-message"></p>
+        <button id="retryBtn" class="retry-btn">再試行</button>
+      </div>
+
+      <!-- 分析結果セクション -->
+      <div id="resultsSection" class="results-section hidden">
+        <!-- サマリーカード -->
+        <section class="summary-section">
+          <h2 class="section-title">
+            <span class="title-icon">📊</span>
+            分析サマリー
+          </h2>
+          <div class="summary-cards">
+            <div class="summary-card" id="scoreCard">
+              <div class="card-icon">🎯</div>
+              <div class="card-content">
+                <span class="card-value" id="totalScore">--</span>
+                <span class="card-label">総合スコア</span>
+              </div>
+            </div>
+            <div class="summary-card" id="warningsCard">
+              <div class="card-icon">⚠️</div>
+              <div class="card-content">
+                <span class="card-value" id="warningsCount">--</span>
+                <span class="card-label">警告</span>
+              </div>
+            </div>
+            <div class="summary-card" id="missingCard">
+              <div class="card-icon">❌</div>
+              <div class="card-content">
+                <span class="card-value" id="missingCount">--</span>
+                <span class="card-label">不足タグ</span>
+              </div>
+            </div>
+            <div class="summary-card" id="passedCard">
+              <div class="card-icon">✅</div>
+              <div class="card-content">
+                <span class="card-value" id="passedCount">--</span>
+                <span class="card-label">適合</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- プレビュータブ -->
+        <section class="preview-section">
+          <h2 class="section-title">
+            <span class="title-icon">👁️</span>
+            表示プレビュー
+          </h2>
+          <div class="preview-tabs">
+            <button class="tab-btn active" data-tab="google">
+              <span class="tab-icon">🔍</span>
+              Google検索
+            </button>
+            <button class="tab-btn" data-tab="facebook">
+              <span class="tab-icon">📘</span>
+              Facebook
+            </button>
+            <button class="tab-btn" data-tab="twitter">
+              <span class="tab-icon">🐦</span>
+              Twitter(X)
+            </button>
+          </div>
+
+          <!-- Google検索結果プレビュー -->
+          <div class="preview-panel active" id="googlePreview">
+            <div class="preview-container google-preview">
+              <div class="google-result">
+                <div class="google-breadcrumb">
+                  <img class="google-favicon" id="googleFavicon" src="" alt="">
+                  <span class="google-url" id="googleUrl">example.com</span>
+                </div>
+                <h3 class="google-title" id="googleTitle">ページタイトル</h3>
+                <p class="google-description" id="googleDescription">メタディスクリプションがここに表示されます...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facebook/OGPプレビュー -->
+          <div class="preview-panel" id="facebookPreview">
+            <div class="preview-container facebook-preview">
+              <div class="og-card">
+                <div class="og-image-container">
+                  <img class="og-image" id="ogImage" src="" alt="">
+                  <div class="og-image-placeholder" id="ogImagePlaceholder">
+                    <span>OG画像なし</span>
+                  </div>
+                </div>
+                <div class="og-content">
+                  <p class="og-site" id="ogSiteName">example.com</p>
+                  <h3 class="og-title" id="ogTitle">OGタイトル</h3>
+                  <p class="og-description" id="ogDescription">OGディスクリプション...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Twitter(X)カードプレビュー -->
+          <div class="preview-panel" id="twitterPreview">
+            <div class="preview-container twitter-preview">
+              <div class="twitter-card" id="twitterCard">
+                <div class="twitter-image-container">
+                  <img class="twitter-image" id="twitterImage" src="" alt="">
+                  <div class="twitter-image-placeholder" id="twitterImagePlaceholder">
+                    <span>Twitter画像なし</span>
+                  </div>
+                </div>
+                <div class="twitter-content">
+                  <h3 class="twitter-title" id="twitterTitle">Twitterタイトル</h3>
+                  <p class="twitter-description" id="twitterDescription">Twitterディスクリプション...</p>
+                  <p class="twitter-domain" id="twitterDomain">example.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- メタタグ詳細 -->
+        <section class="details-section">
+          <h2 class="section-title">
+            <span class="title-icon">🏷️</span>
+            メタタグ詳細
+          </h2>
+          
+          <!-- 基本メタタグ -->
+          <div class="tag-group">
+            <h3 class="group-title">基本メタタグ</h3>
+            <div class="tag-list" id="basicMetaTags"></div>
+          </div>
+
+          <!-- OGPタグ -->
+          <div class="tag-group">
+            <h3 class="group-title">Open Graph（OGP）タグ</h3>
+            <div class="tag-list" id="ogMetaTags"></div>
+          </div>
+
+          <!-- Twitterカードタグ -->
+          <div class="tag-group">
+            <h3 class="group-title">Twitter Cardタグ</h3>
+            <div class="tag-list" id="twitterMetaTags"></div>
+          </div>
+        </section>
+
+        <!-- 改善提案 -->
+        <section class="suggestions-section">
+          <h2 class="section-title">
+            <span class="title-icon">💡</span>
+            改善提案
+          </h2>
+          <div class="suggestions-list" id="suggestionsList"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
+

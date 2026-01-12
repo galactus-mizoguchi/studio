@@ -1,0 +1,33 @@
+---
+description: CSS coding standards, BEM, and responsive design.
+globs: **/*.css
+---
+# CSS コーディング規約
+
+## 必須ルール
+- クラス名はケバブケース（`my-class-name`）
+- プロパティは1行に1つ
+- プロパティの順序: レイアウト → スタイル → その他
+- モバイルファーストでメディアクエリを記述
+- カスタムプロパティ（CSS変数）を活用
+- コメントは日本語可
+- **インデントは2スペース**
+
+## プロパティの順序
+1. **レイアウト**: position, display, width, height, margin, padding など
+2. **スタイル**: background, color, border, border-radius など
+3. **その他**: transition, cursor, z-index など
+
+## メディアクエリの記述方法
+```css
+/* モバイルファースト */
+.element {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .element {
+    width: 50%;
+  }
+}
+```

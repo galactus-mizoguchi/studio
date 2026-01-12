@@ -1,0 +1,46 @@
+# OS固有のファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# エディタ・IDE固有のファイル
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cursor固有のファイル（設定は含めるが、キャッシュなどは除外）
+.cursor/cache/
+.cursor/logs/
+
+# 一時ファイル・ログ
+*.log
+*.tmp
+.cache/
+temp/
+
+# Node.js（必要に応じて）
+node_modules/
+npm-debug.log*
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ビルド成果物
+dist/
+build/
+*.min.js
+*.min.css
+
+# 環境設定ファイル（機密情報を含む可能性）
+.env
+.env.local
+.env.*.local
+
+# バックアップファイル
+*.bak
+*.backup
+*~
