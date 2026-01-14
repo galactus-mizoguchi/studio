@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebページPDF変換ツール | URLからPDFを生成</title>
+  <meta name="description" content="URLを入力するだけで、WebページをPDF化してダウンロードできるツール。資料作成やアーカイブに最適。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-text">URL to PDF</span>
+      </div>
+      <p class="tagline">WebページPDF変換ツール</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- 入力セクション -->
+      <section class="input-section">
+        <h1 class="section-title">
+          <span class="title-icon">📄</span>
+          URLを入力してPDFを生成
+        </h1>
+        <form id="convertForm" class="preview-form">
+          <div class="input-wrapper">
+            <input 
+              type="url" 
+              id="urlInput" 
+              class="url-input" 
+              placeholder="https://example.com" 
+              required
+              autocomplete="url"
+            >
+            <button type="submit" id="convertBtn" class="btn-primary">
+              <span class="btn-text">PDF変換</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <p class="input-hint">PDF化したいWebページのURLを入力してください</p>
+          
+          <!-- 設定オプション -->
+          <div class="options-grid">
+            <div class="option-item">
+              <label for="format">用紙サイズ</label>
+              <select id="format" class="option-select">
+                <option value="a4">A4</option>
+                <option value="a3">A3</option>
+                <option value="letter">Letter</option>
+              </select>
+            </div>
+            <div class="option-item">
+              <label for="orientation">向き</label>
+              <select id="orientation" class="option-select">
+                <option value="portrait">縦 (Portrait)</option>
+                <option value="landscape">横 (Landscape)</option>
+              </select>
+            </div>
+            <div class="option-item">
+              <label for="margin">余白</label>
+              <select id="margin" class="option-select">
+                <option value="10">標準 (10mm)</option>
+                <option value="0">なし (0mm)</option>
+                <option value="20">広い (20mm)</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ローディング表示 -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">ページを読み込み中...</p>
+        <p class="loading-subtext">外部コンテンツの取得には時間がかかる場合があります</p>
+      </div>
+
+      <!-- エラー表示 -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">エラーが発生しました</h3>
+        <p id="errorMessage" class="error-message"></p>
+        <button id="retryBtn" class="retry-btn">再試行</button>
+      </div>
+
+      <!-- プレビュー/結果表示 (非表示でPDF生成に使用) -->
+      <div id="previewContainer" style="display: none; position: absolute; left: -9999px; top: 0; width: 1200px;">
+        <!-- ここにHTMLが注入される -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/footer_logo.svg" alt="GALACTUS" class="footer-logo">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
