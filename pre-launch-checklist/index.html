@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公開前チェックリスト - Web制作の納品・公開前確認項目</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Webサイト公開前に確認すべき項目を網羅したチェックリスト。HTML/CSS、SEO、パフォーマンス、セキュリティ、アクセシビリティなど、納品前の最終確認に。">
+  <meta name="keywords" content="公開前チェックリスト, Webサイト納品, 公開前確認, SEOチェック, パフォーマンス, アクセシビリティ">
+  <meta name="author" content="GALACTUS LLC">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://galactus.co.jp/studio/pre-launch-checklist/">
+  <meta property="og:title" content="公開前チェックリスト - Web制作の納品・公開前確認項目">
+  <meta property="og:description" content="Webサイト公開前に確認すべき項目を網羅したチェックリスト">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a1a1a">
+  
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+  
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <header class="header">
+    <h1>Pre-Launch Checklist<span class="subtitle">公開前チェックリスト</span></h1>
+    <p>Webサイト納品・公開前に確認すべき項目を網羅</p>
+  </header>
+
+  <!-- Progress Section -->
+  <section class="progress-section">
+    <div class="progress-container">
+      <div class="progress-header">
+        <span class="progress-text">完了状況</span>
+        <span class="progress-count">0 / 0 (0%)</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <nav class="nav-links">
+    <a href="#basic" class="nav-link">基本</a>
+    <a href="#seo" class="nav-link">SEO</a>
+    <a href="#performance" class="nav-link">表示速度</a>
+    <a href="#security" class="nav-link">セキュリティ</a>
+    <a href="#accessibility" class="nav-link">アクセシビリティ</a>
+    <a href="#browser" class="nav-link">ブラウザ</a>
+    <a href="#content" class="nav-link">コンテンツ</a>
+    <a href="#legal" class="nav-link">法的要件</a>
+    <a href="#launch" class="nav-link">公開作業</a>
+  </nav>
+
+  <main class="container">
+
+    <!-- ==================== 基本チェック ==================== -->
+    <section class="category-section" id="basic">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">📝</span>基本チェック（HTML/CSS/JS）</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">HTML バリデーションエラーがない</div>
+            <div class="item-description">W3C Markup Validation Service でエラーチェック</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">CSS バリデーションエラーがない</div>
+            <div class="item-description">W3C CSS Validation Service でエラーチェック</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">JavaScript コンソールエラーがない</div>
+            <div class="item-description">ブラウザの開発者ツールでエラーを確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">リンク切れがない</div>
+            <div class="item-description">内部リンク・外部リンクすべて動作確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">画像がすべて表示される</div>
+            <div class="item-description">パスの誤り、ファイル名の大文字小文字を確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">favicon が設定されている</div>
+            <div class="item-description">ブラウザタブにアイコンが表示されることを確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">404 エラーページが用意されている</div>
+            <div class="item-description">存在しないURLにアクセスした際の表示を確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="basic-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">開発用コード・コメントを削除</div>
+            <div class="item-description">console.log、デバッグ用コメント、テスト用コードの削除</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== SEO・メタタグ ==================== -->
+    <section class="category-section" id="seo">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">🔍</span>SEO・メタタグ</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">全ページに適切な title タグがある</div>
+            <div class="item-description">ページごとにユニークで、30〜60文字程度</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">全ページに meta description がある</div>
+            <div class="item-description">ページごとにユニークで、120〜160文字程度</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">OGP タグが設定されている</div>
+            <div class="item-description">og:title, og:description, og:image, og:url</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Twitter Card タグが設定されている</div>
+            <div class="item-description">twitter:card, twitter:title, twitter:description</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">見出しタグ（h1〜h6）が適切に使用されている</div>
+            <div class="item-description">h1 は1ページに1つ、階層構造が正しい</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">canonical タグが設定されている</div>
+            <div class="item-description">重複コンテンツ対策として正規URLを指定</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">sitemap.xml が作成されている</div>
+            <div class="item-description">全ページを含むサイトマップを生成</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">robots.txt が適切に設定されている</div>
+            <div class="item-description">クロールすべきページ・すべきでないページを指定</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="seo-9">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">構造化データ（JSON-LD）が設定されている</div>
+            <div class="item-description">Organization、LocalBusiness、BreadcrumbList など</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== パフォーマンス ==================== -->
+    <section class="category-section" id="performance">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">⚡</span>パフォーマンス・表示速度</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">画像が最適化されている</div>
+            <div class="item-description">適切なフォーマット（WebP推奨）、圧縮、サイズ指定</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">CSS/JavaScript が圧縮（minify）されている</div>
+            <div class="item-description">不要な空白・コメントを削除してファイルサイズ削減</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">ブラウザキャッシュが設定されている</div>
+            <div class="item-description">静的ファイルに適切なキャッシュヘッダーを設定</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Gzip/Brotli 圧縮が有効になっている</div>
+            <div class="item-description">サーバーで圧縮転送を有効化</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">PageSpeed Insights スコアが良好</div>
+            <div class="item-description">モバイル・デスクトップともに70点以上を目標</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Core Web Vitals が良好</div>
+            <div class="item-description">LCP、FID（INP）、CLS が基準値内</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">遅延読み込み（lazy loading）が実装されている</div>
+            <div class="item-description">ファーストビュー外の画像に loading="lazy" を設定</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="perf-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">フォント読み込みが最適化されている</div>
+            <div class="item-description">font-display: swap、preconnect の設定</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== セキュリティ ==================== -->
+    <section class="category-section" id="security">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">🔒</span>セキュリティ</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">SSL証明書が有効で HTTPS が動作する</div>
+            <div class="item-description">すべてのページが https:// でアクセス可能</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">HTTP から HTTPS へリダイレクトされる</div>
+            <div class="item-description">http:// アクセス時に自動で https:// へ転送</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">混合コンテンツ（Mixed Content）がない</div>
+            <div class="item-description">HTTPS ページ内で HTTP リソースを読み込んでいない</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">フォームにバリデーションがある</div>
+            <div class="item-description">クライアント側・サーバー側の両方で入力検証</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">外部リンクに rel="noopener" がある</div>
+            <div class="item-description">target="_blank" のリンクにセキュリティ対策</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">機密情報がソースコードに含まれていない</div>
+            <div class="item-description">APIキー、パスワード、内部情報が露出していない</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="sec-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">セキュリティヘッダーが設定されている</div>
+            <div class="item-description">X-Frame-Options, X-Content-Type-Options など</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== アクセシビリティ ==================== -->
+    <section class="category-section" id="accessibility">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">♿</span>アクセシビリティ</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">すべての画像に alt 属性がある</div>
+            <div class="item-description">装飾画像は alt="" で空に、意味のある画像は説明を記述</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">キーボードのみで操作できる</div>
+            <div class="item-description">Tab キーで全要素にアクセス、Enter/Space で操作可能</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">フォーカスが視覚的にわかる</div>
+            <div class="item-description">フォーカス時のアウトラインが見える状態</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">色のコントラスト比が十分</div>
+            <div class="item-description">WCAG AA 基準（4.5:1）以上を確保</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">フォームの入力欄に label がある</div>
+            <div class="item-description">input と label が正しく紐付けられている</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">lang 属性が正しく設定されている</div>
+            <div class="item-description">html タグに言語コード（ja など）を指定</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">スキップリンクがある</div>
+            <div class="item-description">メインコンテンツへ直接移動できるリンク</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="a11y-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">ARIA ランドマークが適切に使用されている</div>
+            <div class="item-description">header, nav, main, footer などのランドマーク要素</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== ブラウザ・デバイス ==================== -->
+    <section class="category-section" id="browser">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">🌐</span>ブラウザ・デバイス対応</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Chrome で正常に表示・動作する</div>
+            <div class="item-description">最新版で確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Safari で正常に表示・動作する</div>
+            <div class="item-description">macOS / iOS の両方で確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Firefox で正常に表示・動作する</div>
+            <div class="item-description">最新版で確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Edge で正常に表示・動作する</div>
+            <div class="item-description">最新版で確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">スマートフォン（iOS）で正常に表示される</div>
+            <div class="item-description">iPhone 実機またはシミュレーターで確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">スマートフォン（Android）で正常に表示される</div>
+            <div class="item-description">Android 実機またはエミュレーターで確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">タブレットで正常に表示される</div>
+            <div class="item-description">iPad などで表示確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="browser-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">印刷プレビューが適切</div>
+            <div class="item-description">印刷時のレイアウトが崩れていない（必要な場合）</div>
+          </div>
+          <span class="priority-badge recommended">推奨</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== コンテンツ ==================== -->
+    <section class="category-section" id="content">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">📄</span>コンテンツ</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">テキストに誤字脱字がない</div>
+            <div class="item-description">全ページのテキストを校正</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">ダミーテキスト・画像が残っていない</div>
+            <div class="item-description">Lorem ipsum、仮画像を本番コンテンツに置換</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">連絡先情報が正しい</div>
+            <div class="item-description">電話番号、メールアドレス、住所を確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">SNSリンクが正しいアカウントに繋がる</div>
+            <div class="item-description">各SNSのリンク先を確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">著作権表示の年号が正しい</div>
+            <div class="item-description">フッターの © 年号を確認</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="content-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">画像・動画の権利をクリアしている</div>
+            <div class="item-description">ライセンス、クレジット表記を確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== 法的要件 ==================== -->
+    <section class="category-section" id="legal">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">⚖️</span>法的要件</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="legal-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">プライバシーポリシーページがある</div>
+            <div class="item-description">個人情報の取り扱いについて明記</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="legal-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Cookie 同意バナーがある（必要な場合）</div>
+            <div class="item-description">GDPR、改正電気通信事業法への対応</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="legal-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">利用規約ページがある（必要な場合）</div>
+            <div class="item-description">サービス提供時の利用条件を明記</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="legal-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">特定商取引法に基づく表記がある（EC の場合）</div>
+            <div class="item-description">販売者情報、返品条件などを明記</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="legal-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">会社概要・運営者情報がある</div>
+            <div class="item-description">運営元の情報を明記</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ==================== 公開作業 ==================== -->
+    <section class="category-section" id="launch">
+      <div class="category-header">
+        <h2 class="category-title"><span class="category-icon">🚀</span>公開作業</h2>
+        <span class="category-progress">0/0</span>
+      </div>
+      <ul class="checklist">
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-1">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">アクセス解析（Google Analytics）が設置されている</div>
+            <div class="item-description">GA4 のトラッキングコードを確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-2">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Google Search Console に登録されている</div>
+            <div class="item-description">サイトの所有権を確認、サイトマップを送信</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-3">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">ドメインの DNS 設定が正しい</div>
+            <div class="item-description">A レコード、CNAME などが正しく設定されている</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-4">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">メール送信機能が動作する</div>
+            <div class="item-description">お問い合わせフォームからのメール送受信を確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-5">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">バックアップを取得している</div>
+            <div class="item-description">公開前のファイル・データベースをバックアップ</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-6">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">リダイレクト設定が正しい（リニューアルの場合）</div>
+            <div class="item-description">旧 URL から新 URL への 301 リダイレクト</div>
+          </div>
+          <span class="priority-badge important">重要</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-7">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">Basic 認証を解除している</div>
+            <div class="item-description">開発中のアクセス制限を解除</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+        <li class="checklist-item">
+          <label class="checkbox-wrapper">
+            <input type="checkbox" class="checkbox" id="launch-8">
+            <span class="checkbox-custom"></span>
+          </label>
+          <div class="item-content">
+            <div class="item-title">検索エンジンへのインデックスを許可</div>
+            <div class="item-description">noindex 設定を解除、robots.txt を確認</div>
+          </div>
+          <span class="priority-badge critical">必須</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Complete Message -->
+    <div class="complete-message">
+      <div class="complete-icon">🎉</div>
+      <h3 class="complete-title">すべてのチェックが完了しました！</h3>
+      <p class="complete-text">公開準備が整いました。自信を持ってローンチしましょう！</p>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions-section">
+      <button class="action-btn" onclick="checkAll()">✓ すべてチェック</button>
+      <button class="action-btn danger" onclick="resetAll()">↺ リセット</button>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="about-header">
+        <h2 class="about-title">なぜ公開前チェックが重要なのか？</h2>
+        <p class="about-subtitle">Webサイト公開を成功させるために知っておきたいこと</p>
+      </div>
+      <div class="about-content">
+        <p>Webサイト制作のプロジェクトを進行中のWeb担当者の皆さま、こんにちは。<br>
+        ホームページ制作では多くの場合、公開直前になると「本当にこれで大丈夫かな？」「何か見落としはないだろうか？」と、何かと慌ただしくなりがちです。</p>
+        
+        <p>このようなバタバタとした状況では、確認漏れが発生しやすく、後で思わぬトラブルにつながることも少なくありません。Webサイトの公開は、ビジネスにおける重要な節目です。しかし、誤った情報や機能不全、セキュリティの甘さなどが原因で、企業の信頼を損なったり、機会損失を生んだりするリスクも存在します。</p>
+
+        <h3>せっかく出来上がったサイトの公開で失敗しないために</h3>
+        <p>長い制作期間を経て、ついに完成したWebサイト。しかし、公開の瞬間こそが最も重要な局面です。せっかくの努力が水の泡にならないよう、公開前の準備を怠ってはいけません。</p>
+
+        <h4>公開で失敗する主な原因</h4>
+        <p>多くのWebサイトが公開時に失敗する原因は、技術的な問題よりも以下のような「準備不足」がほとんどです。</p>
+        
+        <ul>
+          <li><strong>情報の不備:</strong> 連絡先や住所などの基本情報に誤りがある</li>
+          <li><strong>機能の不具合:</strong> お問い合わせフォームが正常に動作しない</li>
+          <li><strong>表示の問題:</strong> 特定のブラウザやデバイスでレイアウトが崩れる</li>
+          <li><strong>SEO設定の漏れ:</strong> 検索エンジンに正しく認識されない</li>
+          <li><strong>セキュリティの甘さ:</strong> 個人情報保護やセキュリティ対策が不十分</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>このチェックリストを活用して、公開前の確認を漏れなく行い、自信を持ってWebサイトをローンチしましょう！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="about-section" id="summary">
+      <div class="about-header">
+        <h2 class="about-title">困ったときはプロに相談しよう</h2>
+        <p class="about-subtitle">専門家のサポートで不安を解消し、確実な公開を</p>
+      </div>
+      <div class="about-content">
+        <p>ホームページの公開は、ビジネスを加速させる大きなチャンスです。しかし、そのチャンスを最大限に活かすためには、事前の徹底した準備と、公開後の継続的な運用が欠かせません。</p>
+
+        <h3>定期的なチェックでサイトの品質を保つ</h3>
+        <p>今回ご紹介したようなチェックは、公開後でも定期的に（例えば月に1回、四半期に1回など）行い、サイトの品質を把握する習慣をつけましょう。<br>
+        問題点を早期に発見し、対処することで、大きなトラブルを未然に防ぐことができます。</p>
+
+        <h3>課題を明確にして、最適なパートナーを選ぼう</h3>
+        <p>自社サイトの課題が具体的になっていれば、制作会社やWeb担当者に依頼する際にも、より的確な要望を伝えることができ、自社の目標達成に本当に貢献してくれるパートナーを見つけやすくなります。</p>
+
+        <h3>Web制作会社に相談し、プロのサポートを受けることの重要性</h3>
+        <p>ホームページ制作は専門性が高い分野です。不安な点がある場合は、専門知識を持つWeb制作会社に相談し、プロのサポートを受けることをおすすめします。</p>
+        
+        <div class="highlight-box">
+          <p><a href="https://galactus.co.jp" target="_blank" rel="noopener noreferrer">合同会社ギャラクタス</a>では、貴社のWebサイトがただ存在するだけでなく、ビジネスの目標達成に貢献する強力なツールとなるよう、専門知識と親しみやすいサポートで伴走してまいります。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

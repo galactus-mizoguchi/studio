@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Inspector | DNSレコード & WHOIS検索ツール</title>
+  <meta name="description" content="ドメイン名を入力するだけで、DNSレコード（A、AAAA、CNAME、MX、TXT、NS、SOA）とWHOIS情報を確認できるツール。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-text">Domain Inspector</span>
+      </div>
+      <p class="tagline">DNSレコード & WHOIS 検索ツール</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- ドメイン入力セクション -->
+      <section class="input-section">
+        <h1 class="section-title">
+          <span class="title-icon">🔍</span>
+          ドメイン名を入力して確認開始
+        </h1>
+        <form id="checkForm" class="check-form">
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="domainInput" 
+              class="url-input" 
+              placeholder="example.com" 
+              required
+              autocomplete="off"
+            >
+            <button type="submit" id="checkBtn" class="btn-primary">
+              <span class="btn-text">確認</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </div>
+          <p class="input-hint">確認したいドメイン名を入力してください（wwwは不要です）</p>
+        </form>
+      </section>
+
+      <!-- ローディング表示 -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="loading-spinner">
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p class="loading-text">DNSレコードを確認中...</p>
+      </div>
+
+      <!-- エラー表示 -->
+      <div id="errorState" class="error-state hidden">
+        <div class="error-icon">⚠️</div>
+        <h3 class="error-title">エラーが発生しました</h3>
+        <p id="errorMessage" class="error-message"></p>
+        <button id="retryBtn" class="retry-btn">再試行</button>
+      </div>
+
+      <!-- 結果セクション -->
+      <div id="resultsSection" class="results-section hidden">
+        <!-- サマリーカード -->
+        <section class="summary-section">
+          <h2 class="section-title">
+            <span class="title-icon">📊</span>
+            確認結果サマリー
+          </h2>
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="card-icon">🌐</div>
+              <div class="card-content">
+                <span class="card-value" id="domainName">--</span>
+                <span class="card-label">ドメイン名</span>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="card-icon">✅</div>
+              <div class="card-content">
+                <span class="card-value" id="foundCount">--</span>
+                <span class="card-label">見つかったレコード</span>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="card-icon">⏱️</div>
+              <div class="card-content">
+                <span class="card-value" id="responseTime">--</span>
+                <span class="card-label">応答時間</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DNSレコード詳細 -->
+        <section class="records-section">
+          <h2 class="section-title">
+            <span class="title-icon">📝</span>
+            DNSレコード詳細
+          </h2>
+          <div class="records-list" id="recordsList"></div>
+        </section>
+
+        <!-- WHOIS情報 -->
+        <section class="whois-section" id="whoisSection">
+          <h2 class="section-title">
+            <span class="title-icon">📋</span>
+            WHOIS情報
+          </h2>
+          <div id="whoisLoading" class="whois-loading hidden">
+            <div class="loading-spinner small">
+              <div class="spinner-ring"></div>
+            </div>
+            <span>WHOIS情報を取得中...</span>
+          </div>
+          <div id="whoisError" class="whois-error hidden">
+            <span class="error-icon-small">⚠️</span>
+            <span id="whoisErrorMessage">WHOIS情報の取得に失敗しました</span>
+          </div>
+          <div class="whois-content" id="whoisContent"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

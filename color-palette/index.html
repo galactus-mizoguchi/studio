@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配色パレット集 - Web制作で使える厳選カラーパレット</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Web制作で使える配色パレットを業種別・雰囲気別に厳選して紹介。カラーコードをワンクリックでコピー。IT、医療、飲食、美容など様々な業種に対応。">
+  <meta name="keywords" content="配色, カラーパレット, 色見本, Webデザイン, 業種別配色, カラーコード, HEX">
+  <meta name="author" content="GALACTUS LLC">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://galactus.co.jp/studio/color-palette/">
+  <meta property="og:title" content="配色パレット集 - Web制作で使える厳選カラーパレット">
+  <meta property="og:description" content="Web制作で使える配色パレットを業種別・雰囲気別に厳選して紹介">
+  <meta property="og:locale" content="ja_JP">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#1a1a1a">
+  
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+  
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <header class="header">
+    <h1>Color Palette<span class="subtitle">配色パレット集</span></h1>
+    <p>業種別・雰囲気別に厳選した配色パターンをワンクリックでコピー</p>
+  </header>
+
+  <nav class="nav-links">
+    <a href="#industry" class="nav-link">業種別</a>
+    <a href="#mood" class="nav-link">雰囲気別</a>
+  </nav>
+
+  <main class="container">
+    
+    <!-- ==================== 業種別 ==================== -->
+    <section class="category-section" id="industry">
+      <h2 class="category-title">業種別</h2>
+      <div class="palette-grid">
+
+        <!-- IT・テクノロジー -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #0f172a;" data-color="#0f172a"></div>
+            <div class="color-swatch" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
+            <div class="color-swatch" style="background-color: #06b6d4;" data-color="#06b6d4"></div>
+            <div class="color-swatch" style="background-color: #10b981;" data-color="#10b981"></div>
+            <div class="color-swatch" style="background-color: #f8fafc;" data-color="#f8fafc"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Tech Blue</h3>
+              <span class="palette-category">IT・テクノロジー</span>
+            </div>
+            <p class="palette-description">信頼感と先進性を演出するブルー系。SaaS、スタートアップ、IT企業に最適。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#0f172a"><span class="color-dot" style="background-color: #0f172a;"></span><span class="color-hex">#0f172a</span></div>
+              <div class="color-chip" data-color="#3b82f6"><span class="color-dot" style="background-color: #3b82f6;"></span><span class="color-hex">#3b82f6</span></div>
+              <div class="color-chip" data-color="#06b6d4"><span class="color-dot" style="background-color: #06b6d4;"></span><span class="color-hex">#06b6d4</span></div>
+              <div class="color-chip" data-color="#10b981"><span class="color-dot" style="background-color: #10b981;"></span><span class="color-hex">#10b981</span></div>
+              <div class="color-chip" data-color="#f8fafc"><span class="color-dot" style="background-color: #f8fafc;"></span><span class="color-hex">#f8fafc</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Tech Blue */</span>
+<span class="property">--color-dark</span>: <span class="value">#0f172a</span>;
+<span class="property">--color-primary</span>: <span class="value">#3b82f6</span>;
+<span class="property">--color-accent</span>: <span class="value">#06b6d4</span>;
+<span class="property">--color-success</span>: <span class="value">#10b981</span>;
+<span class="property">--color-light</span>: <span class="value">#f8fafc</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- IT・テクノロジー2 -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #1e1b4b;" data-color="#1e1b4b"></div>
+            <div class="color-swatch" style="background-color: #7c3aed;" data-color="#7c3aed"></div>
+            <div class="color-swatch" style="background-color: #a855f7;" data-color="#a855f7"></div>
+            <div class="color-swatch" style="background-color: #ec4899;" data-color="#ec4899"></div>
+            <div class="color-swatch" style="background-color: #faf5ff;" data-color="#faf5ff"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Creative Tech</h3>
+              <span class="palette-category">IT・テクノロジー</span>
+            </div>
+            <p class="palette-description">革新的でクリエイティブな印象のパープル系。AI、メタバース、クリエイティブツールに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#1e1b4b"><span class="color-dot" style="background-color: #1e1b4b;"></span><span class="color-hex">#1e1b4b</span></div>
+              <div class="color-chip" data-color="#7c3aed"><span class="color-dot" style="background-color: #7c3aed;"></span><span class="color-hex">#7c3aed</span></div>
+              <div class="color-chip" data-color="#a855f7"><span class="color-dot" style="background-color: #a855f7;"></span><span class="color-hex">#a855f7</span></div>
+              <div class="color-chip" data-color="#ec4899"><span class="color-dot" style="background-color: #ec4899;"></span><span class="color-hex">#ec4899</span></div>
+              <div class="color-chip" data-color="#faf5ff"><span class="color-dot" style="background-color: #faf5ff;"></span><span class="color-hex">#faf5ff</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Creative Tech */</span>
+<span class="property">--color-dark</span>: <span class="value">#1e1b4b</span>;
+<span class="property">--color-primary</span>: <span class="value">#7c3aed</span>;
+<span class="property">--color-secondary</span>: <span class="value">#a855f7</span>;
+<span class="property">--color-accent</span>: <span class="value">#ec4899</span>;
+<span class="property">--color-light</span>: <span class="value">#faf5ff</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 医療・ヘルスケア -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #0d9488;" data-color="#0d9488"></div>
+            <div class="color-swatch" style="background-color: #14b8a6;" data-color="#14b8a6"></div>
+            <div class="color-swatch" style="background-color: #5eead4;" data-color="#5eead4"></div>
+            <div class="color-swatch" style="background-color: #f0fdfa;" data-color="#f0fdfa"></div>
+            <div class="color-swatch" style="background-color: #ffffff;" data-color="#ffffff"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Medical Care</h3>
+              <span class="palette-category">医療・ヘルスケア</span>
+            </div>
+            <p class="palette-description">清潔感と安心感を与えるティール系。病院、クリニック、ヘルスケアアプリに最適。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#0d9488"><span class="color-dot" style="background-color: #0d9488;"></span><span class="color-hex">#0d9488</span></div>
+              <div class="color-chip" data-color="#14b8a6"><span class="color-dot" style="background-color: #14b8a6;"></span><span class="color-hex">#14b8a6</span></div>
+              <div class="color-chip" data-color="#5eead4"><span class="color-dot" style="background-color: #5eead4;"></span><span class="color-hex">#5eead4</span></div>
+              <div class="color-chip" data-color="#f0fdfa"><span class="color-dot" style="background-color: #f0fdfa;"></span><span class="color-hex">#f0fdfa</span></div>
+              <div class="color-chip" data-color="#ffffff"><span class="color-dot" style="background-color: #ffffff; border: 1px solid #ddd;"></span><span class="color-hex">#ffffff</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Medical Care */</span>
+<span class="property">--color-primary</span>: <span class="value">#0d9488</span>;
+<span class="property">--color-secondary</span>: <span class="value">#14b8a6</span>;
+<span class="property">--color-accent</span>: <span class="value">#5eead4</span>;
+<span class="property">--color-bg</span>: <span class="value">#f0fdfa</span>;
+<span class="property">--color-white</span>: <span class="value">#ffffff</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 飲食・レストラン -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #7c2d12;" data-color="#7c2d12"></div>
+            <div class="color-swatch" style="background-color: #ea580c;" data-color="#ea580c"></div>
+            <div class="color-swatch" style="background-color: #f97316;" data-color="#f97316"></div>
+            <div class="color-swatch" style="background-color: #fbbf24;" data-color="#fbbf24"></div>
+            <div class="color-swatch" style="background-color: #fffbeb;" data-color="#fffbeb"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Warm Restaurant</h3>
+              <span class="palette-category">飲食・レストラン</span>
+            </div>
+            <p class="palette-description">食欲を刺激するオレンジ系。カフェ、レストラン、フードデリバリーサービスに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#7c2d12"><span class="color-dot" style="background-color: #7c2d12;"></span><span class="color-hex">#7c2d12</span></div>
+              <div class="color-chip" data-color="#ea580c"><span class="color-dot" style="background-color: #ea580c;"></span><span class="color-hex">#ea580c</span></div>
+              <div class="color-chip" data-color="#f97316"><span class="color-dot" style="background-color: #f97316;"></span><span class="color-hex">#f97316</span></div>
+              <div class="color-chip" data-color="#fbbf24"><span class="color-dot" style="background-color: #fbbf24;"></span><span class="color-hex">#fbbf24</span></div>
+              <div class="color-chip" data-color="#fffbeb"><span class="color-dot" style="background-color: #fffbeb;"></span><span class="color-hex">#fffbeb</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Warm Restaurant */</span>
+<span class="property">--color-dark</span>: <span class="value">#7c2d12</span>;
+<span class="property">--color-primary</span>: <span class="value">#ea580c</span>;
+<span class="property">--color-secondary</span>: <span class="value">#f97316</span>;
+<span class="property">--color-accent</span>: <span class="value">#fbbf24</span>;
+<span class="property">--color-light</span>: <span class="value">#fffbeb</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 美容・ファッション -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #831843;" data-color="#831843"></div>
+            <div class="color-swatch" style="background-color: #db2777;" data-color="#db2777"></div>
+            <div class="color-swatch" style="background-color: #f472b6;" data-color="#f472b6"></div>
+            <div class="color-swatch" style="background-color: #fce7f3;" data-color="#fce7f3"></div>
+            <div class="color-swatch" style="background-color: #fdf2f8;" data-color="#fdf2f8"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Beauty Rose</h3>
+              <span class="palette-category">美容・ファッション</span>
+            </div>
+            <p class="palette-description">華やかで上品なピンク系。エステ、美容室、コスメブランドに最適。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#831843"><span class="color-dot" style="background-color: #831843;"></span><span class="color-hex">#831843</span></div>
+              <div class="color-chip" data-color="#db2777"><span class="color-dot" style="background-color: #db2777;"></span><span class="color-hex">#db2777</span></div>
+              <div class="color-chip" data-color="#f472b6"><span class="color-dot" style="background-color: #f472b6;"></span><span class="color-hex">#f472b6</span></div>
+              <div class="color-chip" data-color="#fce7f3"><span class="color-dot" style="background-color: #fce7f3;"></span><span class="color-hex">#fce7f3</span></div>
+              <div class="color-chip" data-color="#fdf2f8"><span class="color-dot" style="background-color: #fdf2f8;"></span><span class="color-hex">#fdf2f8</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Beauty Rose */</span>
+<span class="property">--color-dark</span>: <span class="value">#831843</span>;
+<span class="property">--color-primary</span>: <span class="value">#db2777</span>;
+<span class="property">--color-secondary</span>: <span class="value">#f472b6</span>;
+<span class="property">--color-accent</span>: <span class="value">#fce7f3</span>;
+<span class="property">--color-light</span>: <span class="value">#fdf2f8</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 金融・ビジネス -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #1e3a5f;" data-color="#1e3a5f"></div>
+            <div class="color-swatch" style="background-color: #1e40af;" data-color="#1e40af"></div>
+            <div class="color-swatch" style="background-color: #3b82f6;" data-color="#3b82f6"></div>
+            <div class="color-swatch" style="background-color: #64748b;" data-color="#64748b"></div>
+            <div class="color-swatch" style="background-color: #f1f5f9;" data-color="#f1f5f9"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Corporate Trust</h3>
+              <span class="palette-category">金融・ビジネス</span>
+            </div>
+            <p class="palette-description">堅実で信頼感のあるネイビー系。銀行、保険、コンサルティング企業に。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#1e3a5f"><span class="color-dot" style="background-color: #1e3a5f;"></span><span class="color-hex">#1e3a5f</span></div>
+              <div class="color-chip" data-color="#1e40af"><span class="color-dot" style="background-color: #1e40af;"></span><span class="color-hex">#1e40af</span></div>
+              <div class="color-chip" data-color="#3b82f6"><span class="color-dot" style="background-color: #3b82f6;"></span><span class="color-hex">#3b82f6</span></div>
+              <div class="color-chip" data-color="#64748b"><span class="color-dot" style="background-color: #64748b;"></span><span class="color-hex">#64748b</span></div>
+              <div class="color-chip" data-color="#f1f5f9"><span class="color-dot" style="background-color: #f1f5f9;"></span><span class="color-hex">#f1f5f9</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Corporate Trust */</span>
+<span class="property">--color-dark</span>: <span class="value">#1e3a5f</span>;
+<span class="property">--color-primary</span>: <span class="value">#1e40af</span>;
+<span class="property">--color-secondary</span>: <span class="value">#3b82f6</span>;
+<span class="property">--color-muted</span>: <span class="value">#64748b</span>;
+<span class="property">--color-light</span>: <span class="value">#f1f5f9</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 教育・キッズ -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #4f46e5;" data-color="#4f46e5"></div>
+            <div class="color-swatch" style="background-color: #f59e0b;" data-color="#f59e0b"></div>
+            <div class="color-swatch" style="background-color: #10b981;" data-color="#10b981"></div>
+            <div class="color-swatch" style="background-color: #ef4444;" data-color="#ef4444"></div>
+            <div class="color-swatch" style="background-color: #fef3c7;" data-color="#fef3c7"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Playful Learning</h3>
+              <span class="palette-category">教育・キッズ</span>
+            </div>
+            <p class="palette-description">明るく楽しいマルチカラー。学習塾、知育アプリ、キッズ向けサービスに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#4f46e5"><span class="color-dot" style="background-color: #4f46e5;"></span><span class="color-hex">#4f46e5</span></div>
+              <div class="color-chip" data-color="#f59e0b"><span class="color-dot" style="background-color: #f59e0b;"></span><span class="color-hex">#f59e0b</span></div>
+              <div class="color-chip" data-color="#10b981"><span class="color-dot" style="background-color: #10b981;"></span><span class="color-hex">#10b981</span></div>
+              <div class="color-chip" data-color="#ef4444"><span class="color-dot" style="background-color: #ef4444;"></span><span class="color-hex">#ef4444</span></div>
+              <div class="color-chip" data-color="#fef3c7"><span class="color-dot" style="background-color: #fef3c7;"></span><span class="color-hex">#fef3c7</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Playful Learning */</span>
+<span class="property">--color-primary</span>: <span class="value">#4f46e5</span>;
+<span class="property">--color-yellow</span>: <span class="value">#f59e0b</span>;
+<span class="property">--color-green</span>: <span class="value">#10b981</span>;
+<span class="property">--color-red</span>: <span class="value">#ef4444</span>;
+<span class="property">--color-light</span>: <span class="value">#fef3c7</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 自然・エコ -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #14532d;" data-color="#14532d"></div>
+            <div class="color-swatch" style="background-color: #16a34a;" data-color="#16a34a"></div>
+            <div class="color-swatch" style="background-color: #4ade80;" data-color="#4ade80"></div>
+            <div class="color-swatch" style="background-color: #a3e635;" data-color="#a3e635"></div>
+            <div class="color-swatch" style="background-color: #f0fdf4;" data-color="#f0fdf4"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Eco Nature</h3>
+              <span class="palette-category">自然・エコ</span>
+            </div>
+            <p class="palette-description">自然と環境を連想させるグリーン系。オーガニック製品、環境関連、農業に。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#14532d"><span class="color-dot" style="background-color: #14532d;"></span><span class="color-hex">#14532d</span></div>
+              <div class="color-chip" data-color="#16a34a"><span class="color-dot" style="background-color: #16a34a;"></span><span class="color-hex">#16a34a</span></div>
+              <div class="color-chip" data-color="#4ade80"><span class="color-dot" style="background-color: #4ade80;"></span><span class="color-hex">#4ade80</span></div>
+              <div class="color-chip" data-color="#a3e635"><span class="color-dot" style="background-color: #a3e635;"></span><span class="color-hex">#a3e635</span></div>
+              <div class="color-chip" data-color="#f0fdf4"><span class="color-dot" style="background-color: #f0fdf4;"></span><span class="color-hex">#f0fdf4</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Eco Nature */</span>
+<span class="property">--color-dark</span>: <span class="value">#14532d</span>;
+<span class="property">--color-primary</span>: <span class="value">#16a34a</span>;
+<span class="property">--color-secondary</span>: <span class="value">#4ade80</span>;
+<span class="property">--color-accent</span>: <span class="value">#a3e635</span>;
+<span class="property">--color-light</span>: <span class="value">#f0fdf4</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 不動産・建築 -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #292524;" data-color="#292524"></div>
+            <div class="color-swatch" style="background-color: #78716c;" data-color="#78716c"></div>
+            <div class="color-swatch" style="background-color: #a8a29e;" data-color="#a8a29e"></div>
+            <div class="color-swatch" style="background-color: #d4a574;" data-color="#d4a574"></div>
+            <div class="color-swatch" style="background-color: #fafaf9;" data-color="#fafaf9"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Architecture Stone</h3>
+              <span class="palette-category">不動産・建築</span>
+            </div>
+            <p class="palette-description">重厚感と高級感のあるニュートラル系。不動産、建築事務所、インテリアに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#292524"><span class="color-dot" style="background-color: #292524;"></span><span class="color-hex">#292524</span></div>
+              <div class="color-chip" data-color="#78716c"><span class="color-dot" style="background-color: #78716c;"></span><span class="color-hex">#78716c</span></div>
+              <div class="color-chip" data-color="#a8a29e"><span class="color-dot" style="background-color: #a8a29e;"></span><span class="color-hex">#a8a29e</span></div>
+              <div class="color-chip" data-color="#d4a574"><span class="color-dot" style="background-color: #d4a574;"></span><span class="color-hex">#d4a574</span></div>
+              <div class="color-chip" data-color="#fafaf9"><span class="color-dot" style="background-color: #fafaf9;"></span><span class="color-hex">#fafaf9</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Architecture Stone */</span>
+<span class="property">--color-dark</span>: <span class="value">#292524</span>;
+<span class="property">--color-primary</span>: <span class="value">#78716c</span>;
+<span class="property">--color-secondary</span>: <span class="value">#a8a29e</span>;
+<span class="property">--color-accent</span>: <span class="value">#d4a574</span>;
+<span class="property">--color-light</span>: <span class="value">#fafaf9</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 雰囲気別 ==================== -->
+    <section class="category-section" id="mood">
+      <h2 class="category-title">雰囲気別</h2>
+      <div class="palette-grid">
+
+        <!-- モダン・ミニマル -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #000000;" data-color="#000000"></div>
+            <div class="color-swatch" style="background-color: #171717;" data-color="#171717"></div>
+            <div class="color-swatch" style="background-color: #525252;" data-color="#525252"></div>
+            <div class="color-swatch" style="background-color: #e5e5e5;" data-color="#e5e5e5"></div>
+            <div class="color-swatch" style="background-color: #ffffff;" data-color="#ffffff"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Modern Minimal</h3>
+              <span class="palette-category">モダン・ミニマル</span>
+            </div>
+            <p class="palette-description">洗練されたモノトーン配色。シンプルで上品なデザインに最適。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#000000"><span class="color-dot" style="background-color: #000000;"></span><span class="color-hex">#000000</span></div>
+              <div class="color-chip" data-color="#171717"><span class="color-dot" style="background-color: #171717;"></span><span class="color-hex">#171717</span></div>
+              <div class="color-chip" data-color="#525252"><span class="color-dot" style="background-color: #525252;"></span><span class="color-hex">#525252</span></div>
+              <div class="color-chip" data-color="#e5e5e5"><span class="color-dot" style="background-color: #e5e5e5;"></span><span class="color-hex">#e5e5e5</span></div>
+              <div class="color-chip" data-color="#ffffff"><span class="color-dot" style="background-color: #ffffff; border: 1px solid #ddd;"></span><span class="color-hex">#ffffff</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Modern Minimal */</span>
+<span class="property">--color-black</span>: <span class="value">#000000</span>;
+<span class="property">--color-dark</span>: <span class="value">#171717</span>;
+<span class="property">--color-gray</span>: <span class="value">#525252</span>;
+<span class="property">--color-light-gray</span>: <span class="value">#e5e5e5</span>;
+<span class="property">--color-white</span>: <span class="value">#ffffff</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- エレガント・高級 -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #1c1917;" data-color="#1c1917"></div>
+            <div class="color-swatch" style="background-color: #b8860b;" data-color="#b8860b"></div>
+            <div class="color-swatch" style="background-color: #d4af37;" data-color="#d4af37"></div>
+            <div class="color-swatch" style="background-color: #f5f5dc;" data-color="#f5f5dc"></div>
+            <div class="color-swatch" style="background-color: #fffef7;" data-color="#fffef7"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Luxury Gold</h3>
+              <span class="palette-category">エレガント・高級</span>
+            </div>
+            <p class="palette-description">高級感と格式を演出するゴールド系。ホテル、宝飾、プレミアムサービスに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#1c1917"><span class="color-dot" style="background-color: #1c1917;"></span><span class="color-hex">#1c1917</span></div>
+              <div class="color-chip" data-color="#b8860b"><span class="color-dot" style="background-color: #b8860b;"></span><span class="color-hex">#b8860b</span></div>
+              <div class="color-chip" data-color="#d4af37"><span class="color-dot" style="background-color: #d4af37;"></span><span class="color-hex">#d4af37</span></div>
+              <div class="color-chip" data-color="#f5f5dc"><span class="color-dot" style="background-color: #f5f5dc;"></span><span class="color-hex">#f5f5dc</span></div>
+              <div class="color-chip" data-color="#fffef7"><span class="color-dot" style="background-color: #fffef7;"></span><span class="color-hex">#fffef7</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Luxury Gold */</span>
+<span class="property">--color-dark</span>: <span class="value">#1c1917</span>;
+<span class="property">--color-gold-dark</span>: <span class="value">#b8860b</span>;
+<span class="property">--color-gold</span>: <span class="value">#d4af37</span>;
+<span class="property">--color-cream</span>: <span class="value">#f5f5dc</span>;
+<span class="property">--color-light</span>: <span class="value">#fffef7</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ポップ・カジュアル -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #8b5cf6;" data-color="#8b5cf6"></div>
+            <div class="color-swatch" style="background-color: #f43f5e;" data-color="#f43f5e"></div>
+            <div class="color-swatch" style="background-color: #fbbf24;" data-color="#fbbf24"></div>
+            <div class="color-swatch" style="background-color: #34d399;" data-color="#34d399"></div>
+            <div class="color-swatch" style="background-color: #38bdf8;" data-color="#38bdf8"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Pop & Fun</h3>
+              <span class="palette-category">ポップ・カジュアル</span>
+            </div>
+            <p class="palette-description">元気で明るいビビッドカラー。エンタメ、ゲーム、SNSサービスに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#8b5cf6"><span class="color-dot" style="background-color: #8b5cf6;"></span><span class="color-hex">#8b5cf6</span></div>
+              <div class="color-chip" data-color="#f43f5e"><span class="color-dot" style="background-color: #f43f5e;"></span><span class="color-hex">#f43f5e</span></div>
+              <div class="color-chip" data-color="#fbbf24"><span class="color-dot" style="background-color: #fbbf24;"></span><span class="color-hex">#fbbf24</span></div>
+              <div class="color-chip" data-color="#34d399"><span class="color-dot" style="background-color: #34d399;"></span><span class="color-hex">#34d399</span></div>
+              <div class="color-chip" data-color="#38bdf8"><span class="color-dot" style="background-color: #38bdf8;"></span><span class="color-hex">#38bdf8</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Pop & Fun */</span>
+<span class="property">--color-purple</span>: <span class="value">#8b5cf6</span>;
+<span class="property">--color-pink</span>: <span class="value">#f43f5e</span>;
+<span class="property">--color-yellow</span>: <span class="value">#fbbf24</span>;
+<span class="property">--color-green</span>: <span class="value">#34d399</span>;
+<span class="property">--color-blue</span>: <span class="value">#38bdf8</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ナチュラル・オーガニック -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #44403c;" data-color="#44403c"></div>
+            <div class="color-swatch" style="background-color: #78716c;" data-color="#78716c"></div>
+            <div class="color-swatch" style="background-color: #a3a28c;" data-color="#a3a28c"></div>
+            <div class="color-swatch" style="background-color: #d5c7a3;" data-color="#d5c7a3"></div>
+            <div class="color-swatch" style="background-color: #f5f5f0;" data-color="#f5f5f0"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Natural Earth</h3>
+              <span class="palette-category">ナチュラル・オーガニック</span>
+            </div>
+            <p class="palette-description">自然素材を感じさせるアースカラー。オーガニック、ライフスタイル系に。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#44403c"><span class="color-dot" style="background-color: #44403c;"></span><span class="color-hex">#44403c</span></div>
+              <div class="color-chip" data-color="#78716c"><span class="color-dot" style="background-color: #78716c;"></span><span class="color-hex">#78716c</span></div>
+              <div class="color-chip" data-color="#a3a28c"><span class="color-dot" style="background-color: #a3a28c;"></span><span class="color-hex">#a3a28c</span></div>
+              <div class="color-chip" data-color="#d5c7a3"><span class="color-dot" style="background-color: #d5c7a3;"></span><span class="color-hex">#d5c7a3</span></div>
+              <div class="color-chip" data-color="#f5f5f0"><span class="color-dot" style="background-color: #f5f5f0;"></span><span class="color-hex">#f5f5f0</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Natural Earth */</span>
+<span class="property">--color-dark</span>: <span class="value">#44403c</span>;
+<span class="property">--color-brown</span>: <span class="value">#78716c</span>;
+<span class="property">--color-olive</span>: <span class="value">#a3a28c</span>;
+<span class="property">--color-sand</span>: <span class="value">#d5c7a3</span>;
+<span class="property">--color-light</span>: <span class="value">#f5f5f0</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- クール・プロフェッショナル -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #0f172a;" data-color="#0f172a"></div>
+            <div class="color-swatch" style="background-color: #1e293b;" data-color="#1e293b"></div>
+            <div class="color-swatch" style="background-color: #475569;" data-color="#475569"></div>
+            <div class="color-swatch" style="background-color: #94a3b8;" data-color="#94a3b8"></div>
+            <div class="color-swatch" style="background-color: #f1f5f9;" data-color="#f1f5f9"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Cool Slate</h3>
+              <span class="palette-category">クール・プロフェッショナル</span>
+            </div>
+            <p class="palette-description">クールで知的な印象のスレート系。コンサル、法律事務所、BtoBに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#0f172a"><span class="color-dot" style="background-color: #0f172a;"></span><span class="color-hex">#0f172a</span></div>
+              <div class="color-chip" data-color="#1e293b"><span class="color-dot" style="background-color: #1e293b;"></span><span class="color-hex">#1e293b</span></div>
+              <div class="color-chip" data-color="#475569"><span class="color-dot" style="background-color: #475569;"></span><span class="color-hex">#475569</span></div>
+              <div class="color-chip" data-color="#94a3b8"><span class="color-dot" style="background-color: #94a3b8;"></span><span class="color-hex">#94a3b8</span></div>
+              <div class="color-chip" data-color="#f1f5f9"><span class="color-dot" style="background-color: #f1f5f9;"></span><span class="color-hex">#f1f5f9</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Cool Slate */</span>
+<span class="property">--color-dark</span>: <span class="value">#0f172a</span>;
+<span class="property">--color-primary</span>: <span class="value">#1e293b</span>;
+<span class="property">--color-secondary</span>: <span class="value">#475569</span>;
+<span class="property">--color-muted</span>: <span class="value">#94a3b8</span>;
+<span class="property">--color-light</span>: <span class="value">#f1f5f9</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- やわらか・やさしい -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #c4b5fd;" data-color="#c4b5fd"></div>
+            <div class="color-swatch" style="background-color: #fbcfe8;" data-color="#fbcfe8"></div>
+            <div class="color-swatch" style="background-color: #fef08a;" data-color="#fef08a"></div>
+            <div class="color-swatch" style="background-color: #bbf7d0;" data-color="#bbf7d0"></div>
+            <div class="color-swatch" style="background-color: #fefefe;" data-color="#fefefe"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Soft Pastel</h3>
+              <span class="palette-category">やわらか・やさしい</span>
+            </div>
+            <p class="palette-description">優しく親しみやすいパステルカラー。ベビー用品、ウェディング、女性向けに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#c4b5fd"><span class="color-dot" style="background-color: #c4b5fd;"></span><span class="color-hex">#c4b5fd</span></div>
+              <div class="color-chip" data-color="#fbcfe8"><span class="color-dot" style="background-color: #fbcfe8;"></span><span class="color-hex">#fbcfe8</span></div>
+              <div class="color-chip" data-color="#fef08a"><span class="color-dot" style="background-color: #fef08a;"></span><span class="color-hex">#fef08a</span></div>
+              <div class="color-chip" data-color="#bbf7d0"><span class="color-dot" style="background-color: #bbf7d0;"></span><span class="color-hex">#bbf7d0</span></div>
+              <div class="color-chip" data-color="#fefefe"><span class="color-dot" style="background-color: #fefefe;"></span><span class="color-hex">#fefefe</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Soft Pastel */</span>
+<span class="property">--color-purple</span>: <span class="value">#c4b5fd</span>;
+<span class="property">--color-pink</span>: <span class="value">#fbcfe8</span>;
+<span class="property">--color-yellow</span>: <span class="value">#fef08a</span>;
+<span class="property">--color-green</span>: <span class="value">#bbf7d0</span>;
+<span class="property">--color-white</span>: <span class="value">#fefefe</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ダークモード -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #09090b;" data-color="#09090b"></div>
+            <div class="color-swatch" style="background-color: #18181b;" data-color="#18181b"></div>
+            <div class="color-swatch" style="background-color: #27272a;" data-color="#27272a"></div>
+            <div class="color-swatch" style="background-color: #3f3f46;" data-color="#3f3f46"></div>
+            <div class="color-swatch" style="background-color: #fafafa;" data-color="#fafafa"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Dark Mode</h3>
+              <span class="palette-category">ダークモード</span>
+            </div>
+            <p class="palette-description">ダークモードUI用の基本配色。目に優しく長時間の使用に適した設計。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#09090b"><span class="color-dot" style="background-color: #09090b;"></span><span class="color-hex">#09090b</span></div>
+              <div class="color-chip" data-color="#18181b"><span class="color-dot" style="background-color: #18181b;"></span><span class="color-hex">#18181b</span></div>
+              <div class="color-chip" data-color="#27272a"><span class="color-dot" style="background-color: #27272a;"></span><span class="color-hex">#27272a</span></div>
+              <div class="color-chip" data-color="#3f3f46"><span class="color-dot" style="background-color: #3f3f46;"></span><span class="color-hex">#3f3f46</span></div>
+              <div class="color-chip" data-color="#fafafa"><span class="color-dot" style="background-color: #fafafa;"></span><span class="color-hex">#fafafa</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Dark Mode */</span>
+<span class="property">--color-bg</span>: <span class="value">#09090b</span>;
+<span class="property">--color-card</span>: <span class="value">#18181b</span>;
+<span class="property">--color-border</span>: <span class="value">#27272a</span>;
+<span class="property">--color-muted</span>: <span class="value">#3f3f46</span>;
+<span class="property">--color-text</span>: <span class="value">#fafafa</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 和風・日本 -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #1a1a1a;" data-color="#1a1a1a"></div>
+            <div class="color-swatch" style="background-color: #8b0000;" data-color="#8b0000"></div>
+            <div class="color-swatch" style="background-color: #d4a574;" data-color="#d4a574"></div>
+            <div class="color-swatch" style="background-color: #556b2f;" data-color="#556b2f"></div>
+            <div class="color-swatch" style="background-color: #f5f5dc;" data-color="#f5f5dc"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Japanese Traditional</h3>
+              <span class="palette-category">和風・日本</span>
+            </div>
+            <p class="palette-description">伝統的な和の色合い。旅館、日本料理店、伝統工芸品サイトに。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#1a1a1a"><span class="color-dot" style="background-color: #1a1a1a;"></span><span class="color-hex">#1a1a1a</span></div>
+              <div class="color-chip" data-color="#8b0000"><span class="color-dot" style="background-color: #8b0000;"></span><span class="color-hex">#8b0000</span></div>
+              <div class="color-chip" data-color="#d4a574"><span class="color-dot" style="background-color: #d4a574;"></span><span class="color-hex">#d4a574</span></div>
+              <div class="color-chip" data-color="#556b2f"><span class="color-dot" style="background-color: #556b2f;"></span><span class="color-hex">#556b2f</span></div>
+              <div class="color-chip" data-color="#f5f5dc"><span class="color-dot" style="background-color: #f5f5dc;"></span><span class="color-hex">#f5f5dc</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Japanese Traditional */</span>
+<span class="property">--color-sumi</span>: <span class="value">#1a1a1a</span>;
+<span class="property">--color-aka</span>: <span class="value">#8b0000</span>;
+<span class="property">--color-kitsune</span>: <span class="value">#d4a574</span>;
+<span class="property">--color-matcha</span>: <span class="value">#556b2f</span>;
+<span class="property">--color-kinari</span>: <span class="value">#f5f5dc</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- レトロ・ヴィンテージ -->
+        <article class="palette-card">
+          <div class="color-preview">
+            <div class="color-swatch" style="background-color: #2d1b0e;" data-color="#2d1b0e"></div>
+            <div class="color-swatch" style="background-color: #8b4513;" data-color="#8b4513"></div>
+            <div class="color-swatch" style="background-color: #cd853f;" data-color="#cd853f"></div>
+            <div class="color-swatch" style="background-color: #deb887;" data-color="#deb887"></div>
+            <div class="color-swatch" style="background-color: #faebd7;" data-color="#faebd7"></div>
+          </div>
+          <div class="palette-content">
+            <div class="palette-header">
+              <h3 class="palette-title">Vintage Brown</h3>
+              <span class="palette-category">レトロ・ヴィンテージ</span>
+            </div>
+            <p class="palette-description">懐かしさを感じるセピア系。アンティークショップ、カフェ、古書店に。</p>
+            <div class="color-list">
+              <div class="color-chip" data-color="#2d1b0e"><span class="color-dot" style="background-color: #2d1b0e;"></span><span class="color-hex">#2d1b0e</span></div>
+              <div class="color-chip" data-color="#8b4513"><span class="color-dot" style="background-color: #8b4513;"></span><span class="color-hex">#8b4513</span></div>
+              <div class="color-chip" data-color="#cd853f"><span class="color-dot" style="background-color: #cd853f;"></span><span class="color-hex">#cd853f</span></div>
+              <div class="color-chip" data-color="#deb887"><span class="color-dot" style="background-color: #deb887;"></span><span class="color-hex">#deb887</span></div>
+              <div class="color-chip" data-color="#faebd7"><span class="color-dot" style="background-color: #faebd7;"></span><span class="color-hex">#faebd7</span></div>
+            </div>
+            <div class="code-section">
+              <div class="code-block">
+                <code><span class="comment">/* Vintage Brown */</span>
+<span class="property">--color-dark</span>: <span class="value">#2d1b0e</span>;
+<span class="property">--color-primary</span>: <span class="value">#8b4513</span>;
+<span class="property">--color-secondary</span>: <span class="value">#cd853f</span>;
+<span class="property">--color-accent</span>: <span class="value">#deb887</span>;
+<span class="property">--color-light</span>: <span class="value">#faebd7</span>;</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank" rel="noopener noreferrer">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

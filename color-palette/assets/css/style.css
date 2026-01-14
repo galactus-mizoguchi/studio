@@ -42,6 +42,8 @@ html {
 .header h1 .subtitle {
     font-size: 0.5em;
     letter-spacing: 1.5px;
+    display: block;
+    margin-top: 0.5rem;
 }
 
 .header p {
@@ -53,7 +55,7 @@ html {
 
 @media (min-width: 768px) {
     .header h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
@@ -69,10 +71,11 @@ html {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 0.5rem;
 }
 
 .nav-link {
-    margin: 0 1rem;
+    margin: 0 0.75rem;
     padding: 0.5rem 0;
     text-decoration: none;
     color: #1a1a1a;
@@ -118,7 +121,7 @@ html {
     margin-bottom: 2rem;
     text-align: center;
     color: #1a1a1a;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 1.5px;
     position: relative;
     padding-bottom: 1rem;
@@ -135,64 +138,112 @@ html {
     background-color: #1a1a1a;
 }
 
-/* Font grid */
-.font-grid {
+/* Palette grid */
+.palette-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
 }
 
 @media (min-width: 768px) {
-    .font-grid {
+    .palette-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (min-width: 1024px) {
-    .font-grid {
+    .palette-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Font card */
-.font-card {
+/* Palette card */
+.palette-card {
     background-color: #fff;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1.75rem;
+    border-radius: 12px;
+    overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.font-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
+.palette-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
     border-color: #1a1a1a;
 }
 
-/* Font header */
-.font-header {
+/* Color preview */
+.color-preview {
+    display: flex;
+    height: 100px;
+}
+
+.color-swatch {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    transition: flex 0.3s ease;
+}
+
+.color-swatch:hover {
+    flex: 1.5;
+}
+
+.color-swatch::after {
+    content: attr(data-color);
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.color-swatch:hover::after {
+    opacity: 1;
+}
+
+.color-swatch.copied::after {
+    content: 'Copied!';
+    background: #10b981;
+}
+
+/* Palette content */
+.palette-content {
+    padding: 1.5rem;
+}
+
+/* Palette header */
+.palette-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     flex-wrap: wrap;
     gap: 0.75rem;
 }
 
-.font-title {
-    font-size: 1.5rem;
+.palette-title {
+    font-size: 1.25rem;
     color: #1a1a1a;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 1.2;
     flex: 1;
     min-width: 0;
 }
 
-.font-category {
+.palette-category {
     display: inline-block;
     padding: 0.375rem 0.75rem;
     background-color: #f0f0f0;
@@ -205,47 +256,61 @@ html {
     flex-shrink: 0;
 }
 
-/* Font description */
-.font-description {
+/* Palette description */
+.palette-description {
     color: #666;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
     line-height: 1.6;
 }
 
-/* Sample section */
-.sample-section {
-    margin-bottom: 1.5rem;
+/* Color list */
+.color-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.sample-text {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    padding: 1.25rem;
-    background-color: #fafafa;
+.color-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.625rem;
+    background-color: #f5f5f5;
     border-radius: 6px;
-    color: #1a1a1a;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
-.sample-text-normal {
-    font-size: 1.125rem;
+.color-chip:hover {
+    background-color: #e8e8e8;
+    border-color: #ccc;
 }
 
-.sample-text-bold {
-    font-weight: 700;
+.color-chip.copied {
+    background-color: #d1fae5;
+    border-color: #10b981;
 }
 
-.sample-text-italic {
-    font-style: italic;
+.color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.color-hex {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #333;
 }
 
 /* Code section */
 .code-section {
-    margin-bottom: 1rem;
-    position: relative;
+    margin-top: 1rem;
 }
 
 .code-block {
@@ -254,31 +319,28 @@ html {
     padding-right: 3.5rem;
     border-radius: 6px;
     overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
     position: relative;
-}
-
-.code-block + .code-block {
-    margin-top: 0.75rem;
 }
 
 .code-block code {
     color: #f0f0f0;
     white-space: pre-wrap;
     word-break: break-all;
+    line-height: 1.6;
 }
 
-.code-block .tag {
-    color: #66d9ef;
-}
-
-.code-block .attr {
+.code-block .property {
     color: #a6e22e;
 }
 
-.code-block .string {
+.code-block .value {
     color: #e6db74;
+}
+
+.code-block .comment {
+    color: #75715e;
 }
 
 .copy-button {
@@ -302,47 +364,32 @@ html {
 }
 
 .copy-button.copied {
-    background-color: rgba(102, 217, 239, 0.2);
-    border-color: #66d9ef;
-    color: #66d9ef;
+    background-color: rgba(16, 185, 129, 0.3);
+    border-color: #10b981;
+    color: #10b981;
 }
 
-/* Font link */
-.font-link {
-    display: block;
-    width: fit-content;
-    margin-left: auto;
-    color: #666;
-    text-decoration: none;
-    border-bottom: 1px solid #666;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-top: 0.5rem;
-    padding-bottom: 2px;
-}
-
-.font-link:hover {
-    color: #1a1a1a;
-    border-bottom-color: #1a1a1a;
-}
-
-.font-link::after {
-    content: ' ↗';
-    font-size: 0.9em;
-    margin-left: 0.2rem;
-}
-
-/* Footer */
-.footer {
-    background-color: #1a1a1a;
-    color: #fff;
+/* Utility classes */
+.text-center {
     text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 4rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
 }
 
-/* Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=M+PLUS+1p:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700&family=Kosugi&family=Kosugi+Maru&family=Sawarabi+Gothic&family=Sawarabi+Mincho&family=Shippori+Mincho:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&family=Zen+Old+Mincho:wght@400;700&family=DotGothic16&family=Kaisei+Tokumin:wght@400;700&family=Kaisei+HarunoUmi:wght@400;700&family=Kaisei+Decol:wght@400;700&family=Kaisei+Opti:wght@400;700&family=New+Tegomin&family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Antique&family=Zen+Antique+Soft&family=Zen+Kurenaido&family=Zen+Loop&family=Zen+Tokyo+Zoo&family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Raleway:wght@300;400;700&family=Poppins:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;700&family=Oswald:wght@300;400;700&family=Inter:wght@300;400;700&family=Nunito:wght@300;400;700&family=Ubuntu:wght@300;400;700&family=PT+Sans:wght@400;700&family=Work+Sans:wght@300;400;700&family=Bebas+Neue&family=Barlow:wght@300;400;700&family=DM+Sans:wght@400;700&family=Fira+Sans:wght@300;400;700&family=Quicksand:wght@300;400;700&family=Comfortaa:wght@300;400;700&family=Playfair+Display:wght@400;700;900&family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;700&family=PT+Serif:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;700&family=Crimson+Pro:wght@300;400;700&family=Source+Serif+Pro:wght@300;400;700&family=Cormorant:wght@300;400;700&family=EB+Garamond:wght@400;700&family=Dancing+Script:wght@400;700&family=Pacifico&family=Great+Vibes&family=Sacramento&family=Satisfy&family=Allura&family=Pinyon+Script&family=Kaushan+Script&display=swap');
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .palette-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .color-preview {
+        height: 80px;
+    }
+    
+    .nav-link {
+        margin: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+}

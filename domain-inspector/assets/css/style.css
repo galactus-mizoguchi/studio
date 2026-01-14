@@ -1,0 +1,364 @@
+/* Domain Inspector 専用スタイル */
+
+.check-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* レコード詳細 */
+.records-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.records-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.record-group {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.record-group:hover {
+  border-color: var(--color-border-hover);
+}
+
+.record-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  user-select: none;
+}
+
+.record-group-header:hover {
+  background: var(--color-bg-tertiary);
+}
+
+.record-group-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.record-type-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-cyan);
+  background: rgba(78, 205, 196, 0.15);
+  border-radius: var(--radius-sm);
+}
+
+.record-count {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.record-group-content {
+  padding: var(--spacing-md);
+  display: none;
+}
+
+.record-group-content.expanded {
+  display: block;
+}
+
+/* 個別レコード */
+.record-item {
+  padding: var(--spacing-md);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.record-item:last-child {
+  margin-bottom: 0;
+}
+
+.record-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.record-name {
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.record-ttl {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.record-value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  word-break: break-all;
+  line-height: 1.6;
+}
+
+.record-value.priority {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.record-priority {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-accent-purple);
+  background: rgba(17, 50, 117, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+/* レコードなし */
+.no-records {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-muted);
+}
+
+.no-records-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* WHOIS情報セクション */
+.whois-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.whois-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+}
+
+.whois-loading.hidden {
+  display: none;
+}
+
+.loading-spinner.small {
+  width: 24px;
+  height: 24px;
+}
+
+.loading-spinner.small .spinner-ring {
+  border-width: 2px;
+}
+
+.whois-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-lg);
+  background: rgba(250, 81, 112, 0.1);
+  border: 1px solid rgba(250, 81, 112, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-accent-red);
+}
+
+.whois-error.hidden {
+  display: none;
+}
+
+.error-icon-small {
+  font-size: 1.25rem;
+}
+
+.whois-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.whois-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: var(--transition-base);
+}
+
+.whois-card:hover {
+  border-color: var(--color-border-hover);
+}
+
+.whois-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.whois-card-title .icon {
+  font-size: 1.25rem;
+}
+
+.whois-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.whois-item:last-child {
+  margin-bottom: 0;
+}
+
+.whois-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.whois-value {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+
+.whois-value.highlight {
+  color: var(--color-accent-cyan);
+  background: rgba(78, 205, 196, 0.1);
+}
+
+.whois-value.date {
+  color: var(--color-accent-purple);
+}
+
+.whois-value.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  margin-right: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+.status-badge.active {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-accent-green);
+}
+
+.status-badge.inactive {
+  background: rgba(250, 81, 112, 0.15);
+  color: var(--color-accent-red);
+}
+
+.status-badge.default {
+  background: rgba(100, 116, 139, 0.15);
+  color: var(--color-text-muted);
+}
+
+/* WHOIS非対応メッセージ */
+.whois-unsupported {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--spacing-2xl);
+  background: rgba(250, 81, 112, 0.05);
+  border: 1px solid rgba(250, 81, 112, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.unsupported-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.unsupported-message {
+  font-size: 1rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.unsupported-message strong {
+  color: var(--color-accent-red);
+}
+
+.unsupported-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .input-wrapper {
+    flex-direction: column;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .records-list {
+    grid-template-columns: 1fr;
+  }
+
+  .record-group-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+}
