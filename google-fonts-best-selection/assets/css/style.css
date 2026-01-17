@@ -346,3 +346,34 @@ html {
 
 /* Google Fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=M+PLUS+1p:wght@400;700&family=M+PLUS+Rounded+1c:wght@400;700&family=Kosugi&family=Kosugi+Maru&family=Sawarabi+Gothic&family=Sawarabi+Mincho&family=Shippori+Mincho:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&family=Zen+Old+Mincho:wght@400;700&family=DotGothic16&family=Kaisei+Tokumin:wght@400;700&family=Kaisei+HarunoUmi:wght@400;700&family=Kaisei+Decol:wght@400;700&family=Kaisei+Opti:wght@400;700&family=New+Tegomin&family=Yuji+Boku&family=Yuji+Mai&family=Yuji+Syuku&family=Zen+Antique&family=Zen+Antique+Soft&family=Zen+Kurenaido&family=Zen+Loop&family=Zen+Tokyo+Zoo&family=Roboto:wght@300;400;700&family=Open+Sans:wght@300;400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;700&family=Raleway:wght@300;400;700&family=Poppins:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;700&family=Oswald:wght@300;400;700&family=Inter:wght@300;400;700&family=Nunito:wght@300;400;700&family=Ubuntu:wght@300;400;700&family=PT+Sans:wght@400;700&family=Work+Sans:wght@300;400;700&family=Bebas+Neue&family=Barlow:wght@300;400;700&family=DM+Sans:wght@400;700&family=Fira+Sans:wght@300;400;700&family=Quicksand:wght@300;400;700&family=Comfortaa:wght@300;400;700&family=Playfair+Display:wght@400;700;900&family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;700&family=PT+Serif:wght@400;700&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;700&family=Crimson+Pro:wght@300;400;700&family=Source+Serif+Pro:wght@300;400;700&family=Cormorant:wght@300;400;700&family=EB+Garamond:wght@400;700&family=Dancing+Script:wght@400;700&family=Pacifico&family=Great+Vibes&family=Sacramento&family=Satisfy&family=Allura&family=Pinyon+Script&family=Kaushan+Script&display=swap');
+
+/* Back Link Styles */
+.back-link-container {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition-base);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  background: var(--color-text-primary);
+  border: 1px solid var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-home:hover {
+  color: #ffffff;
+  background: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}

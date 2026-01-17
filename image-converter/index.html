@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画像変換ツール | GALACTUS Studio</title>
+  <meta name="description" content="ブラウザ上でJPG/PNG画像をWebPやAVIF形式に変換できる無料ツールです。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Background Effects -->
+  <div class="background-effects">
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-text">Image Converter</span>
+      </div>
+      <p class="tagline">JPG/PNG画像をWebP/AVIFに瞬時に変換</p>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- アップロードエリア -->
+      <section id="upload-area" class="upload-area">
+        <div class="upload-content">
+          <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+          </svg>
+          <p class="upload-text">ここに画像をドラッグ＆ドロップ</p>
+          <p class="upload-subtext">またはクリックしてファイルを選択</p>
+          <input type="file" id="file-input" accept="image/png, image/jpeg" hidden>
+        </div>
+      </section>
+
+      <!-- プレビュー＆設定エリア（初期状態は非表示） -->
+      <section id="editor-area" class="editor-area hidden">
+        <div class="preview-container">
+          <img id="image-preview" src="" alt="プレビュー">
+          <div class="file-info" id="file-info"></div>
+        </div>
+
+        <div class="controls-container">
+          <div class="control-group">
+            <label>変換フォーマット</label>
+            <div class="format-options">
+              <label class="radio-label">
+                <input type="radio" name="format" value="image/webp" checked>
+                <div class="radio-custom"></div>
+                <span class="radio-text">WebP</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="format" value="image/avif">
+                <div class="radio-custom"></div>
+                <span class="radio-text">AVIF</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="quality-slider">画質: <span id="quality-value">80</span>%</label>
+            <input type="range" id="quality-slider" min="1" max="100" value="80">
+          </div>
+
+          <div class="action-buttons">
+            <button id="convert-btn" class="btn btn-primary">
+              <span class="btn-text">変換してダウンロード</span>
+              <span class="btn-icon">↓</span>
+            </button>
+            <button id="reset-btn" class="btn btn-secondary">リセット</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="back-link-container">
+    <a href="../" class="back-to-home">← GALACTUS Studioに戻る</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/footer_logo.svg" alt="GALACTUS" class="footer-logo">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

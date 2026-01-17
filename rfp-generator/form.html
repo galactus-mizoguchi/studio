@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFP作成フォーム | RFP生成ツール</title>
+  <meta name="description" content="提案依頼書（RFP）を作成するための質問フォームです。10問の質問に答えてください。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <span class="logo-text">RFP Generator</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="form-section">
+        <div class="form-header">
+          <h1 class="section-title">
+            <span class="title-icon">📋</span>
+            RFP作成フォーム
+          </h1>
+          <p class="section-description">
+            以下の質問にお答えください。回答内容から提案依頼書（RFP）を自動生成します。
+          </p>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">質問 1 / 10</p>
+        </div>
+
+        <form id="rfpForm" class="rfp-form">
+          <!-- 質問1: プロジェクト名・概要 -->
+          <div class="form-step active" data-step="1">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">1</span>
+                <h2 class="question-title">プロジェクト名・概要</h2>
+              </div>
+              <p class="question-hint">Webサイトのプロジェクト名と概要を教えてください。</p>
+              <div class="form-group">
+                <label for="projectName" class="form-label">プロジェクト名</label>
+                <input 
+                  type="text" 
+                  id="projectName" 
+                  name="projectName" 
+                  class="form-input" 
+                  placeholder="例：コーポレートサイトリニューアル"
+                  required
+                >
+                <span class="form-error" id="error-projectName"></span>
+              </div>
+              <div class="form-group">
+                <label for="projectOverview" class="form-label">プロジェクト概要</label>
+                <textarea 
+                  id="projectOverview" 
+                  name="projectOverview" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="例：既存サイトのリニューアルを行い、より多くの顧客にリーチできるようにしたい"
+                  required
+                ></textarea>
+                <span class="form-error" id="error-projectOverview"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問2: 業種・サービス内容 -->
+          <div class="form-step" data-step="2">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">2</span>
+                <h2 class="question-title">業種・サービス内容</h2>
+              </div>
+              <p class="question-hint">どのような事業を行っていますか？具体的に教えてください。</p>
+              <div class="form-group">
+                <textarea 
+                  id="industry" 
+                  name="industry" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="例：ITコンサルティング、ECサイト運営、美容サロン経営など"
+                  required
+                ></textarea>
+                <span class="form-error" id="error-industry"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問3: ターゲット -->
+          <div class="form-step" data-step="3">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">3</span>
+                <h2 class="question-title">主なターゲット</h2>
+              </div>
+              <p class="question-hint">サイトの主な訪問者を教えてください（年齢層、法人・個人など）。</p>
+              <div class="form-group">
+                <textarea 
+                  id="target" 
+                  name="target" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="例：30代〜50代の個人事業主、中小企業の経営者など"
+                  required
+                ></textarea>
+                <span class="form-error" id="error-target"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問4: サイトの目的 -->
+          <div class="form-step" data-step="4">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">4</span>
+                <h2 class="question-title">サイトの目的</h2>
+              </div>
+              <p class="question-hint">このWebサイトで達成したいことを教えてください。</p>
+              <div class="form-group">
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="問い合わせ・資料請求">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">問い合わせ・資料請求</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="集客・マーケティング">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">集客・マーケティング</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="採用・人材募集">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">採用・人材募集</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="ブランディング・認知度向上">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">ブランディング・認知度向上</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="EC・オンライン販売">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">EC・オンライン販売</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="purpose" value="その他">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">その他</span>
+                  </label>
+                </div>
+                <span class="form-error" id="error-purpose"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問5: 希望する機能 -->
+          <div class="form-step" data-step="5">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">5</span>
+                <h2 class="question-title">希望する機能</h2>
+              </div>
+              <p class="question-hint">必要な機能やコンテンツを教えてください。</p>
+              <div class="form-group">
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="お問い合わせフォーム">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">お問い合わせフォーム</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="ニュース・ブログ">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">ニュース・ブログ</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="資料ダウンロード">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">資料ダウンロード</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="会員機能">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">会員機能</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="多言語対応">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">多言語対応</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="features" value="その他">
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">その他</span>
+                  </label>
+                </div>
+                <span class="form-hint">複数選択可能です</span>
+                <span class="form-error" id="error-features"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問6: 希望ページ数 -->
+          <div class="form-step" data-step="6">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">6</span>
+                <h2 class="question-title">希望ページ数</h2>
+              </div>
+              <p class="question-hint">おおよそのページ数を教えてください。</p>
+              <div class="form-group">
+                <select id="pageCount" name="pageCount" class="form-select" required>
+                  <option value="">選択してください</option>
+                  <option value="5ページ以下">5ページ以下</option>
+                  <option value="6〜10ページ">6〜10ページ</option>
+                  <option value="11〜20ページ">11〜20ページ</option>
+                  <option value="21〜30ページ">21〜30ページ</option>
+                  <option value="31ページ以上">31ページ以上</option>
+                </select>
+                <span class="form-error" id="error-pageCount"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問7: デザインの方向性 -->
+          <div class="form-step" data-step="7">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">7</span>
+                <h2 class="question-title">デザインの方向性</h2>
+              </div>
+              <p class="question-hint">希望するデザインのトーンや雰囲気を選択してください。</p>
+              <div class="form-group">
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="信頼感・堅実" required>
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">信頼感・堅実</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="親しみ・フレンドリー">
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">親しみ・フレンドリー</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="高級感・プレミアム">
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">高級感・プレミアム</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="カジュアル・気軽">
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">カジュアル・気軽</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="モダン・先進的">
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">モダン・先進的</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="designTone" value="シンプル・ミニマル">
+                    <span class="radio-custom"></span>
+                    <span class="radio-text">シンプル・ミニマル</span>
+                  </label>
+                </div>
+                <span class="form-error" id="error-designTone"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問8: 予算・スケジュール -->
+          <div class="form-step" data-step="8">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">8</span>
+                <h2 class="question-title">予算・スケジュール</h2>
+              </div>
+              <p class="question-hint">概算予算と希望納期を教えてください。</p>
+              <div class="form-group">
+                <label for="budget" class="form-label">概算予算</label>
+                <select id="budget" name="budget" class="form-select" required>
+                  <option value="">選択してください</option>
+                  <option value="50万円未満">50万円未満</option>
+                  <option value="50万円〜100万円">50万円〜100万円</option>
+                  <option value="100万円〜200万円">100万円〜200万円</option>
+                  <option value="200万円〜300万円">200万円〜300万円</option>
+                  <option value="300万円以上">300万円以上</option>
+                  <option value="要相談">要相談</option>
+                </select>
+                <span class="form-error" id="error-budget"></span>
+              </div>
+              <div class="form-group">
+                <label for="schedule" class="form-label">希望納期</label>
+                <input 
+                  type="text" 
+                  id="schedule" 
+                  name="schedule" 
+                  class="form-input" 
+                  placeholder="例：2026年3月末まで"
+                  required
+                >
+                <span class="form-error" id="error-schedule"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問9: 参考サイト -->
+          <div class="form-step" data-step="9">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">9</span>
+                <h2 class="question-title">参考サイト（任意）</h2>
+              </div>
+              <p class="question-hint">参考にしたい競合サイトや類似サイトのURLがあれば教えてください。</p>
+              <div class="form-group">
+                <input 
+                  type="url" 
+                  id="referenceSites" 
+                  name="referenceSites" 
+                  class="form-input" 
+                  placeholder="https://example.com"
+                >
+                <span class="form-hint">複数ある場合は、カンマ区切りで入力してください</span>
+                <span class="form-error" id="error-referenceSites"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 質問10: その他要望 -->
+          <div class="form-step" data-step="10">
+            <div class="question-card">
+              <div class="question-header">
+                <span class="question-number">10</span>
+                <h2 class="question-title">その他要望（任意）</h2>
+              </div>
+              <p class="question-hint">その他、伝えたい要望や条件があれば教えてください。</p>
+              <div class="form-group">
+                <textarea 
+                  id="otherRequests" 
+                  name="otherRequests" 
+                  class="form-textarea" 
+                  rows="4" 
+                  placeholder="例：既存サイトのリニューアル、SEO対策を重視したいなど"
+                ></textarea>
+                <span class="form-error" id="error-otherRequests"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- フォーム操作ボタン -->
+          <div class="form-actions">
+            <button type="button" id="prevBtn" class="btn btn-secondary" style="display: none;">
+              <span class="btn-icon">←</span>
+              <span class="btn-text">戻る</span>
+            </button>
+            <button type="button" id="nextBtn" class="btn btn-primary">
+              <span class="btn-text">次へ</span>
+              <span class="btn-icon">→</span>
+            </button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" style="display: none;">
+              <span class="btn-text">RFPを生成</span>
+              <span class="btn-icon">✨</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div class="back-link-container">
+    <a href="../" class="back-to-home">← GALACTUS Studioに戻る</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/footer_logo.svg" alt="GALACTUS" class="footer-logo">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

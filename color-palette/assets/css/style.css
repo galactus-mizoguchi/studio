@@ -393,3 +393,34 @@ html {
         font-size: 1.5rem;
     }
 }
+
+/* Back Link Styles */
+.back-link-container {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition-base);
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  background: var(--color-text-primary);
+  border: 1px solid var(--color-text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.back-to-home:hover {
+  color: #ffffff;
+  background: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}

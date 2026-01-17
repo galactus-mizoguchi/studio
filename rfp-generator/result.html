@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFP生成結果 | RFP生成ツール</title>
+  <meta name="description" content="提案依頼書（RFP）の生成結果を表示します。PDF形式でダウンロードできます。">
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P542KLR');</script>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="background-effects">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-pattern"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html" class="logo-link">
+          <span class="logo-text">RFP Generator</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container">
+      <section class="result-section">
+        <div class="result-header">
+          <h1 class="section-title">
+            <span class="title-icon">📄</span>
+            提案依頼書（RFP）生成完了
+          </h1>
+          <p class="section-description">
+            以下の内容で提案依頼書が生成されました。PDF形式でダウンロードできます。
+          </p>
+        </div>
+
+        <div class="result-actions">
+          <button id="downloadPdfBtn" class="btn btn-primary">
+            <span class="btn-icon">📥</span>
+            <span class="btn-text">PDFをダウンロード</span>
+          </button>
+          <button id="copyBtn" class="btn btn-secondary">
+            <span class="btn-icon">📋</span>
+            <span class="btn-text">テキストをコピー</span>
+          </button>
+          <a href="form.html" class="btn btn-secondary">
+            <span class="btn-icon">🔄</span>
+            <span class="btn-text">新規作成</span>
+          </a>
+        </div>
+
+        <div id="resultContent" class="result-content">
+          <!-- RFPコンテンツ -->
+          <div id="rfpDocument" class="rfp-document">
+            <div class="rfp-header">
+              <h1 class="rfp-title">提案依頼書（RFP）</h1>
+              <p class="rfp-subtitle">Request for Proposal</p>
+              <p class="rfp-date" id="rfpDate"></p>
+            </div>
+
+            <div class="rfp-body">
+              <!-- 1. プロジェクト概要 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">1. プロジェクト概要</h2>
+                <div class="rfp-item">
+                  <h3 class="rfp-item-title">プロジェクト名</h3>
+                  <p class="rfp-item-content" id="projectName"></p>
+                </div>
+                <div class="rfp-item">
+                  <h3 class="rfp-item-title">プロジェクト概要</h3>
+                  <p class="rfp-item-content" id="projectOverview"></p>
+                </div>
+              </section>
+
+              <!-- 2. 業種・サービス内容 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">2. 業種・サービス内容</h2>
+                <p class="rfp-item-content" id="industry"></p>
+              </section>
+
+              <!-- 3. ターゲット -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">3. 主なターゲット</h2>
+                <p class="rfp-item-content" id="target"></p>
+              </section>
+
+              <!-- 4. サイトの目的 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">4. サイトの目的</h2>
+                <p class="rfp-item-content" id="purpose"></p>
+              </section>
+
+              <!-- 5. 希望する機能 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">5. 希望する機能</h2>
+                <p class="rfp-item-content" id="features"></p>
+              </section>
+
+              <!-- 6. 希望ページ数 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">6. 希望ページ数</h2>
+                <p class="rfp-item-content" id="pageCount"></p>
+              </section>
+
+              <!-- 7. デザインの方向性 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">7. デザインの方向性</h2>
+                <p class="rfp-item-content" id="designTone"></p>
+              </section>
+
+              <!-- 8. 予算・スケジュール -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">8. 予算・スケジュール</h2>
+                <div class="rfp-item">
+                  <h3 class="rfp-item-title">概算予算</h3>
+                  <p class="rfp-item-content" id="budget"></p>
+                </div>
+                <div class="rfp-item">
+                  <h3 class="rfp-item-title">希望納期</h3>
+                  <p class="rfp-item-content" id="schedule"></p>
+                </div>
+              </section>
+
+              <!-- 9. 参考サイト -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">9. 参考サイト</h2>
+                <p class="rfp-item-content" id="referenceSites"></p>
+              </section>
+
+              <!-- 10. その他要望 -->
+              <section class="rfp-section">
+                <h2 class="rfp-section-title">10. その他要望</h2>
+                <p class="rfp-item-content" id="otherRequests"></p>
+              </section>
+            </div>
+
+            <div class="rfp-footer">
+              <p class="rfp-footer-text">本提案依頼書は、RFP生成ツールにより自動生成されました。</p>
+              <p class="rfp-footer-text">生成日時: <span id="generatedDate"></span></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="errorState" class="error-state hidden">
+          <div class="error-icon">⚠️</div>
+          <h3 class="error-title">エラーが発生しました</h3>
+          <p id="errorMessage" class="error-message"></p>
+          <a href="form.html" class="btn btn-primary">フォームに戻る</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="back-link-container">
+    <a href="../" class="back-to-home">← GALACTUS Studioに戻る</a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/footer_logo.svg" alt="GALACTUS" class="footer-logo">
+      <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank">GALACTUS LLC</a>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,86 +1,108 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator - GALACTUS STUDIO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/studio.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator - GALACTUS STUDIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/studio.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P542KLR');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/favicon.ico" sizes="32x32" />
 </head>
 <body>
-    <div class="background-effects">
-        <div class="grid-pattern"></div>
-    </div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P542KLR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <div class="container">
-        <header class="site-header">
-            <a href="../" class="logo">
-                <span class="logo-text">PassGen</span>
-            </a>
-            <p class="tagline">安全なパスワード生成ツール</p>
-        </header>
+  <div class="background-effects">
+    <div class="grid-pattern"></div>
+  </div>
 
-        <main class="main-content">
-            <div class="generator-container">
-                <section class="config-section">
-                    <div class="config-group">
-                        <label for="length-slider" class="config-label">
-                            <span class="label-text">パスワードの長さ</span>
-                            <span class="length-value" id="length-value">12</span>
-                        </label>
-                        <div class="slider-wrapper">
-                            <input type="range" id="length-slider" min="6" max="64" value="12" class="range-slider">
-                        </div>
-                    </div>
+  <div class="container">
+    <header class="site-header">
+      <a href="../" class="logo">
+        <span class="logo-text">PassGen</span>
+      </a>
+      <p class="tagline">安全なパスワード生成ツール</p>
+    </header>
 
-                    <div class="config-group options-grid">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="include-uppercase" checked>
-                            <span class="checkbox-custom"></span>
-                            <span class="label-text">英大文字 (A-Z)</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="include-lowercase" checked>
-                            <span class="checkbox-custom"></span>
-                            <span class="label-text">英小文字 (a-z)</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="include-numbers" checked>
-                            <span class="checkbox-custom"></span>
-                            <span class="label-text">数字 (0-9)</span>
-                        </label>
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" id="include-symbols" checked>
-                            <span class="checkbox-custom"></span>
-                            <span class="label-text">記号 (!@#$...)</span>
-                        </label>
-                    </div>
-
-                    <button id="generate-btn" class="btn-primary full-width">
-                        <span class="btn-text">パスワードを生成</span>
-                        <span class="btn-icon">⚡</span>
-                    </button>
-                </section>
-
-                <section class="results-section hidden" id="results-section">
-                    <h2 class="section-title">
-                        生成結果
-                    </h2>
-                    <div class="passwords-grid" id="passwords-grid">
-                        <!-- Generated passwords will be inserted here -->
-                    </div>
-                </section>
+    <main class="main-content">
+      <div class="generator-container">
+        <section class="config-section">
+          <div class="config-group">
+            <label for="length-slider" class="config-label">
+              <span class="label-text">パスワードの長さ</span>
+              <span class="length-value" id="length-value">12</span>
+            </label>
+            <div class="slider-wrapper">
+              <input type="range" id="length-slider" min="6" max="64" value="12" class="range-slider">
             </div>
-        </main>
+          </div>
 
-        <footer class="site-footer">
-            <p class="copyright">© 2026 GALACTUS STUDIO</p>
-        </footer>
+          <div class="config-group options-grid">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="include-uppercase" checked>
+              <span class="checkbox-custom"></span>
+              <span class="label-text">英大文字 (A-Z)</span>
+            </label>
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="include-lowercase" checked>
+              <span class="checkbox-custom"></span>
+              <span class="label-text">英小文字 (a-z)</span>
+            </label>
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="include-numbers" checked>
+              <span class="checkbox-custom"></span>
+              <span class="label-text">数字 (0-9)</span>
+            </label>
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="include-symbols" checked>
+              <span class="checkbox-custom"></span>
+              <span class="label-text">記号 (!@#$...)</span>
+            </label>
+          </div>
+
+          <button id="generate-btn" class="btn-primary full-width">
+            <span class="btn-text">パスワードを生成</span>
+            <span class="btn-icon">🔐</span>
+          </button>
+        </section>
+
+        <section class="results-section hidden" id="results-section">
+          <h2 class="section-title">
+            生成結果
+          </h2>
+          <div class="passwords-grid" id="passwords-grid">
+            <!-- Generated passwords will be inserted here -->
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <div class="back-link-container">
+      <a href="../" class="back-to-home">← GALACTUS Studioに戻る</a>
     </div>
 
-    <script src="assets/js/script.js"></script>
+    <footer class="site-footer">
+      <div class="container">
+        <img src="https://galactus.co.jp/wp/wp-content/themes/galactus/assets/img/footer_logo.svg" alt="GALACTUS" class="footer-logo">
+        <p class="copyright">&copy; 2026 <a href="https://galactus.co.jp" class="footer-link" target="_blank">GALACTUS LLC</a>. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

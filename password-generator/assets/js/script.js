@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
+  // 要素の取得
   const lengthSlider = document.getElementById('length-slider');
   const lengthValue = document.getElementById('length-value');
   const includeUppercase = document.getElementById('include-uppercase');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultsSection = document.getElementById('results-section');
   const passwordsGrid = document.getElementById('passwords-grid');
 
-  // Charsets
+  // 文字セット
   const CHARSETS = {
     uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lowercase: 'abcdefghijklmnopqrstuvwxyz',
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     symbols: '!@#$%^&*()_+~`|}{[]:;?><,./-='
   };
 
-  // Update slider value
+  // スライダーの値を更新
   lengthSlider.addEventListener('input', (e) => {
     lengthValue.textContent = e.target.value;
   });
 
-  // Generate Passwords
+  // パスワード生成イベント
   generateBtn.addEventListener('click', () => {
     const length = parseInt(lengthSlider.value);
     const hasUpper = includeUppercase.checked;
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayPasswords(passwords);
   });
 
+  // パスワード生成ロジック
   function generatePassword(length, upper, lower, number, symbol) {
     let generatedPassword = '';
     const typesCount = upper + lower + number + symbol;
@@ -54,17 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
       { symbol }
     ].filter(item => Object.values(item)[0]);
 
-    // Create a valid charset based on selection
+    // 選択に基づいた有効な文字セットを作成
     let validCharset = '';
     if (upper) validCharset += CHARSETS.uppercase;
     if (lower) validCharset += CHARSETS.lowercase;
     if (number) validCharset += CHARSETS.numbers;
     if (symbol) validCharset += CHARSETS.symbols;
 
-    // Ensure at least one of each selected type is included (optional but good for "strong" passwords)
-    // For simplicity and true randomness, we'll just pick from the pool, 
-    // but to ensure it feels "correct" we might validCharset.
-
+    // 単純なランダム生成
     for (let i = 0; i < length; i++) {
       const randomIndex = Math.floor(Math.random() * validCharset.length);
       generatedPassword += validCharset[randomIndex];
@@ -73,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return generatedPassword;
   }
 
+  // 生成結果の表示
   function displayPasswords(passwords) {
     passwordsGrid.innerHTML = '';
     resultsSection.classList.remove('hidden');
@@ -81,10 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'password-card';
       card.innerHTML = `
-                <span class="password-text">${password}</span>
-                <span class="copy-icon">📋</span>
-                <div class="copied-toast">コピーしました！</div>
-            `;
+        <span class="password-text">${password}</span>
+        <span class="copy-icon">📋</span>
+        <div class="copied-toast">コピーしました！</div>
+      `;
 
       card.addEventListener('click', () => {
         copyToClipboard(password, card);
@@ -93,10 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
       passwordsGrid.appendChild(card);
     });
 
-    // Scroll to results
+    // 結果までスクロール
     resultsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  // クリップボードへのコピー
   async function copyToClipboard(text, cardElement) {
     try {
       await navigator.clipboard.writeText(text);
